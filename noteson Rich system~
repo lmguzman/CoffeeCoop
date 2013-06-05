@@ -1,0 +1,21 @@
+questions for the Maker
+
+in data/info.csv, what is Cash, Assets and MilkOutgoing?
+
+how do you obtain the count?
+
+
+
+structure of the program as I understand it:
+1) info = a list of 'global' variables - cost of the coffee, milk etc
+2) people = a database of all the people in the co-op
+*** these two sheets are updated my ME, not the machine, right?
+
+load.data
+3) dates have to be entered in info.csv correctly.  There must always be a "Future" column
+4) makes a vector of file names, by adding .csv to the end of the dates in info.
+5) checks to make sure they exist in the directory
+6) checks to make sure ONLY they exist in the directory 
+***do I also have to edit a .csv with a matching name? yes it seems so
+7) lapply over all file names a function that reads in all the csv files and checks to confirm that they all have exactly the filenames they ought to.
+

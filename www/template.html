@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?><!-- -*-nxml-*- -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Coffee co-op summary and balances</title>
+  <link rel="stylesheet" href="style.css" type="text/css" />
+  <script type="text/javascript" src="jquery.tablesorter/jquery-latest.js"></script> 
+  <script type="text/javascript" src="jquery.tablesorter/jquery.tablesorter.js"></script> 
+
+<script type="text/javascript">
+$(document).ready(function() 
+{ 
+$("#myTable").tablesorter({widgets: ['zebra']});
+$("#summaryTable").tablesorter({widgets: ['zebra']});
+} 
+); 
+</script>
+
+  <link rel="Stylesheet" type="text/css" href="stylesheet.css" media="all" />
+</head>
+
+<body>
+
+<h1>Co-op wide summary</h1>
+
+<table id="summaryTable" class="tablesorter">
+%s
+</table>
+
+
+<h1>Balances and coffee consumption</h1>
+
+<p>Your balance will be updated within a day of giving Rich money.  If
+it hasn't been, let him know.</p>
+
+<p>Only people not known to have left are included in the table
+below.</p>
+
+<p>Click on a column to sort the table; click again to reverse the sort.</p>
+
+<table id="myTable" class="tablesorter">
+%s
+</table>
+
+</body>
+
+</html>

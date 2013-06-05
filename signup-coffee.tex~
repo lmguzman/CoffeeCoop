@@ -1,0 +1,19 @@
+\documentclass{article}
+
+\usepackage{amsfonts} % for \checkmark
+\usepackage[garamond]{mathdesign}
+%\usepackage{hoefler}
+%\usepackage{mathpazo}
+\usepackage[margin=2cm]{geometry}
+
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{ltxtable}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\LTXtable{\textwidth}{table-coffee.tex}
+
+\end{document}

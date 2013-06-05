@@ -1,0 +1,20 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsfonts} % for \checkmark
+%\usepackage{hoefler}
+%\usepackage{mathpazo}
+\usepackage[margin=1cm]{geometry}
+\usepackage{tabularx}
+\usepackage{longtable, lscape}
+\usepackage{ltxtable}
+\usepackage{multicol}
+
+\pagestyle{empty}
+
+\begin{document}
+%\begin{landscape}
+\begin{multicols}{2}
+\LTXtable{\textwidth}{shamedata.tex}
+\end{multicols}
+%\end{landscape}
+\end{document}

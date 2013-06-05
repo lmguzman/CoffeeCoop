@@ -1,0 +1,65 @@
+body,em { 
+    font-family: Verdana, Lucida, Helvetica, Arial, sans-serif;
+    font-size: 90%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1, h2, h3
+{
+    font-family: Helvetica, sans-serif;
+    font-weight: normal;
+  }
+
+h1 {
+  font-size: 140%;
+  font-weight: bold;
+  color: black;
+  border-style: solid;
+  border-color: #385E0F;
+  border-width: 0px;
+  border-bottom-width: 2px;
+  padding: 10px;
+  padding-left: 1em;
+  margin-right: 50%;
+}
+
+
+/* tables */
+table.tablesorter {
+    margin: 1em 2em 15px;
+    font-size: 80%;
+    text-align: left;
+    border-collapse:collapse;
+    border-top: 2px black solid;
+    border-bottom: 2px black solid;
+}
+
+table.tablesorter thead tr th, table.tablesorter tfoot tr th {
+    background-color: #385E0F; /* Dark green */
+    color: #ffffff;
+    padding: 4px;
+    border-bottom: 1px black solid;    
+}
+table.tablesorter thead tr .header {
+    background-repeat: no-repeat;
+    background-position: center right;
+    cursor: pointer;
+}
+table.tablesorter tbody td {
+    padding: 4px;
+    background-color: #FFF;
+    vertical-align: top;
+}
+table.tablesorter tbody tr.odd td {
+    background-color:#F3FBE9; /* Very light green */
+}
+table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
+    background-color: #78CA20;
+}
+
+td.indebt {
+    color: red;
+    font-style: italic;
+}

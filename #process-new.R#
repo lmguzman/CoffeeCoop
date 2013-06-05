@@ -1,0 +1,38 @@
+source("R/load.R")
+source("R/process-html.R")
+source("R/accounts.R")
+source("R/process-latex.R")
+
+#dat <- load.data()
+## If you just wanted to dump out the data and use your own system,
+## then dat$data contains people x period matrices for payment,
+## payment date, milk (yes/no), number of coffees, number of teas.
+
+## Generate the website
+www(dat)
+## Push it to the server
+www.copy()
+
+## Do the accounts.  This bit has never worked well, but what it is
+## meant to do is check that all the fields have been added in the
+## underlying source sheets, generate the new future sheets, etc.
+## Have a look at R/accounts.R
+do.accounts(force.git = TRUE)
+
+## Check if there are people who have left.  The number is the amount
+## of periods over which people have not recorded a coffee.
+possibly.gone(dat)
+
+## Generate signup sheets:
+## Will be done automatially by do.accounts(), but tuning is sometimes
+## needed.
+signup.coffee(dat$status)
+signup.tea.flag(dat$status)
+
+## edit info to not rely on that same data a new bit of data, similar to a real
+## account, which gives the amount of money in and out
+
+## and a separate datasheet to keep track of the timing of donations.
+## could even be the same place.  
+
+## I want something to keep track of the money going out for donations, milk& sugar (when those guys ask for cash) and coffee.  

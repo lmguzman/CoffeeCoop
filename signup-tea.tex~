@@ -1,0 +1,59 @@
+\documentclass{article}
+
+\usepackage{fontspec}
+%\usepackage{xltxtra}
+%\usepackage{xunicode}
+\defaultfontfeatures{Scale=MatchLowercase,Mapping=tex-text}
+%\setmainfont{Hoefler Text}
+
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage[hmargin=3cm,vmargin=1.5cm]{geometry}
+\usepackage{graphicx}
+
+\usepackage{soul}
+\sodef\expand{}{.08em}{.5em}{.37em plus.1em minus.14em}
+\newcommand{\expandUP}[1]{\MakeUppercase{\expand{#1}}}
+
+\pagestyle{empty}
+\definecolor{vlightgray}{HTML}{DDDDDD}
+
+\begin{document}
+
+% \begin{center}
+%   \Large\fontspec{Gill Sans}{\expandUP{Biodiversity tea milk supply}}
+%   {\rule{.9\textwidth}{.07ex}}
+% \end{center}
+% \vspace{4pt}%
+
+The cost per cup is \$0.15 --- the same as adding milk to
+coffee.
+%
+If you are also a coffee drinker, continue using the coffee sheet for
+coffee, but tick here for tea milk.  Your balance is shared across
+both sheets.
+%
+Payment to Rich in room 312.  If your balance is \textbf{bolded} you
+owe money.
+
+\vspace{8pt}
+
+\begin{center}
+\setlength{\aboverulesep}{0pt}
+\setlength{\belowrulesep}{0pt}
+\setlength{\extrarowheight}{.75ex}
+\input{table-tea}
+\end{center}
+
+\vspace{8pt}
+New tea drinkers:
+\begin{center}
+\setlength{\aboverulesep}{0pt}
+\setlength{\belowrulesep}{0pt}
+\setlength{\extrarowheight}{.75ex}
+\input{table-tea-new}
+\end{center}
+
+\end{document}

@@ -1,0 +1,18 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsfonts} % for \checkmark
+%\usepackage{hoefler}
+%\usepackage{mathpazo}
+\usepackage[margin=1cm]{geometry}
+\usepackage{tabularx}
+\usepackage{longtable, lscape}
+\usepackage{ltxtable}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{landscape}
+\LTXtable{\textwidth}{table-coffee.tex}
+\end{landscape}
+\end{document}
