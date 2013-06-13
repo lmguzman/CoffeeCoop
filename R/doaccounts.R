@@ -1,8 +1,8 @@
 #do.accounts <- function(){
 
   ## LOAD info AND people DATA
-  info <- read.csv("data/info.csv", as.is=TRUE,comment.char="#")
-  people <- read.csv("data/people.csv", as.is=TRUE, na.strings="")
+  info <- read.csv("../data/info.csv", as.is=TRUE,comment.char="#")
+  people <- read.csv("../data/people.csv", as.is=TRUE, na.strings="")
   date <- info$Date
   nd <- length(date)
 
@@ -11,14 +11,14 @@
     if ( any(as.character(as.Date(date[-nd])) != date[-nd]) )
       stop("Non-future dates must be in format YYYY-MM-DD")
 
-    files <- sprintf("data/%s.csv", info$Date)
+    files <- sprintf("../data/%s.csv", info$Date)
     if ( !all(file.exists(files)) ) # all files must exist!
       stop("Data sheets missing: ",
           paste(basename(files)[!file.exists(files)], collapse=", "))
 
     ## Extra files in the data directory are almost certainly bad news.
     extra <- setdiff(c("info.csv", "people.csv", basename(files)),
-                    dir("data"))
+                    dir("../data"))
     if ( length(extra) > 0 )
       stop("Extra files found in data directory: ",
           paste(extra, collapse=", "))
