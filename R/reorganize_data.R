@@ -137,7 +137,11 @@ one_each_duplicate <- lapply(duplicate_list[both_same],"[",i=1,j=)
 one_each_duplicate_df <- do.call(rbind,one_each_duplicate)
 people_corrected <- rbind(one_each_duplicate_df,same_combined,people[!people$ID%in%duplicates,])
 
-pplDT <- data.table(people_corrected,key="ID")
+write.csv(info,file="coffee_database/info.csv")
+write.csv(people_corrected,file="coffee_database/people.csv")
+write.csv(payments,file="coffee_database/payments")
+write.csv(consumption,file="coffee_database/consumption.csv")
+
 
 
 
