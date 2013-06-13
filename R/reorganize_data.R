@@ -70,31 +70,100 @@ consumption <- consumption[!names(consumption)%in%c("Payment","Payment.Date")]
 ## names to numbers -- are numbers unique?  
 ## may have to delete rows in person database
 
-## destroy 'milk/nomilk' column.
+## destroy 'milk/nomilk' column:
+## how many milk drinkers drank tea?
+consumption$Milkconsumed <- consumption$Tea*consumption$Milk
+consumption <- consumption[!names(consumption)%in%c("Name","Milk","Tea")]
+# awkwardly change the 'Milkconsumed' column back
+names(consumption)[which(names(consumption)=="Milkconsumed")] <- "Milk"
 
-library(data.table)
+head(consumption)
 
-consumption_dt <- data.table(consumption,key=c("data_date","ID"))
-info_dt <- data.table(info,key="Date")
-people_dt <- data.table(people,key="ID")
+## Now for payment info
 
-info_dt["2010-08-04"]
-consumption_dt[info_dt]
+## payments of CASH into the coop
+payments <- all_data[-which(all_data$Payment==0),]
+payments <- payments[!names(payments)%in%c("Name","Milk","Coffee","Tea")]
 
-consumption_dt[info_dt,CostBlack*Coffee+Tea*CostMilk]
+head(payments)
+## note: it is confusing that there are two datelike columns: data_date and Payment.Date
+## data_date = the date on which the sheet was made up
+## Payment.Date = the date on which the person paid
 
-
-pplmoney <- consumption_dt[info_dt,list(ID,CoffeeCost=CostBlack*Coffee,CostMilk=Tea*CostMilk)]
-pplmoney[,list(sum(CoffeeCost),sum(CostMilk)),by=ID]
-
-merge(consumption_dt,people_dt,by="ID")
-
-consumption_dt[J(people$ID)]
-
-consumption_dt[J("2013-04-22",221)]
+## how are the other spreadsheets?
+info
+info <- info[!names(info)%in%c("Cash","Assets","MilkOutgoing")]
+head(info)
 
 
-consumption_dt[J("",221)]
-consumption_dt[people]
+people
+## this one is tricky.  under the new system we have no need for the 'Name' column; all others can stay
+people <- people[!names(people)%in%"Name"]
+## which IDs are duplicated?
+duplicates <- names(which(table(people$ID)==2))
+duplicate_ppl <- people[people$ID%in%duplicates,]
+head(duplicate_ppl)
+rownames(duplicate_ppl) <- NULL
+
+## first let's split by ID and see what is identical:
+duplicate_list <- split(duplicate_ppl,duplicate_ppl$ID)
+allidentical <- function(listelement) all(sapply(listelement,function(x) identical(x[1],x[2])))
+both_same <- sapply(duplicate_list,FUN=allidentical)
+## both_same have the same entries for each variable, and one row may be deleted safely
+## the others are more problematic:
+duplicate_list[!both_same]
+## many cases of NA -- just make them the same!
+nareplace <- function(listelement ) {
+  out <- lapply(listelement,function(x){
+    if(sum(x=="NA")==1){
+      x[x!="NA"]
+    }
+    else x[1]
+  }
+  )
+  data.frame(out)
+}
+same_combined <- do.call(rbind,lapply(duplicate_list[!both_same],nareplace))
+##  these are a mess! many people are listed as 'gone', because we had to imagine a fake person disappeared.
+ids_maybe_gone <- same_combined[same_combined$Gone,][["ID"]]
+duplicate_ppl[duplicate_ppl$ID%in%ids_maybe_gone,]
+## not.gone == Alathea, Jeremy, Simone
+same_combined[same_combined$ID%in%c(6,114,226),"Gone"] <- FALSE
+same_combined
+## looks good. 
+## take only one of the true duplicates
+one_each_duplicate <- lapply(duplicate_list[both_same],"[",i=1,j=)
+
+one_each_duplicate_df <- do.call(rbind,one_each_duplicate)
+people_corrected <- rbind(one_each_duplicate_df,same_combined,people[!people$ID%in%duplicates,])
+
+pplDT <- data.table(people_corrected,key="ID")
+
+
+
+# library(data.table)
+# 
+# consumption_dt <- data.table(consumption,key=c("data_date","ID"))
+# info_dt <- data.table(info,key="Date")
+# people_dt <- data.table(people,key="ID")
+# 
+# info_dt["2010-08-04"]
+# consumption_dt[info_dt]
+# 
+# consumption_dt[info_dt,CostBlack*Coffee+Tea*CostMilk]
+# 
+# 
+# pplmoney <- consumption_dt[info_dt,list(ID,CoffeeCost=CostBlack*Coffee,CostMilk=Tea*CostMilk)]
+# pplmoney[,list(sum(CoffeeCost),sum(CostMilk)),by=ID]
+# 
+# merge(consumption_dt,people_dt,by="ID")
+# 
+# consumption_dt[J(people$ID)]
+# 
+# consumption_dt[J("2013-04-22",221)]
+# 
+# 
+# consumption_dt[J("",221)]
+# consumption_dt[people]
 
 ## this ends with the data all nicely organized into a sheet showing Milk and Coffee consumption.
