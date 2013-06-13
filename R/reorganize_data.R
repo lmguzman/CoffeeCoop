@@ -139,35 +139,5 @@ people_corrected <- rbind(one_each_duplicate_df,same_combined,people[!people$ID%
 
 write.csv(info,file="coffee_database/info.csv")
 write.csv(people_corrected,file="coffee_database/people.csv")
-write.csv(payments,file="coffee_database/payments")
+write.csv(payments,file="coffee_database/payments.csv")
 write.csv(consumption,file="coffee_database/consumption.csv")
-
-
-
-
-# library(data.table)
-# 
-# consumption_dt <- data.table(consumption,key=c("data_date","ID"))
-# info_dt <- data.table(info,key="Date")
-# people_dt <- data.table(people,key="ID")
-# 
-# info_dt["2010-08-04"]
-# consumption_dt[info_dt]
-# 
-# consumption_dt[info_dt,CostBlack*Coffee+Tea*CostMilk]
-# 
-# 
-# pplmoney <- consumption_dt[info_dt,list(ID,CoffeeCost=CostBlack*Coffee,CostMilk=Tea*CostMilk)]
-# pplmoney[,list(sum(CoffeeCost),sum(CostMilk)),by=ID]
-# 
-# merge(consumption_dt,people_dt,by="ID")
-# 
-# consumption_dt[J(people$ID)]
-# 
-# consumption_dt[J("2013-04-22",221)]
-# 
-# 
-# consumption_dt[J("",221)]
-# consumption_dt[people]
-
-## this ends with the data all nicely organized into a sheet showing Milk and Coffee consumption.
