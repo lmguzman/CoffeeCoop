@@ -2,6 +2,7 @@
 
 ## Andrew MacDonald, June 2013
 
+library(lubridate)
 ## read in all the data
 ## code taken directly from do.accounts.R
 ## LOAD info AND people DATA
@@ -72,7 +73,16 @@ consumption <- consumption[!names(consumption)%in%c("Payment","Payment.Date")]
 
 ## destroy 'milk/nomilk' column:
 ## how many milk drinkers drank tea?
-consumption$Milkconsumed <- consumption$Tea*consumption$Milk
+## we COULD simply go Tea+Coffee*Milk
+## BUT
+## milk was not always charged for!
+## when did we start charging!?!
+milk_charge_date <- ymd(info$Date[which.min(is.na(info$CostMilk))])
+## make a new vector, milkmoney, which will be 0 until this date and then 1 or 0 afterwards, depending on the person
+milkmoney <- consumption$Milk
+
+coop_dates <- ymd(as.character(consumption$data_date))
+consumption$Milkconsumed <- with(consumption,Tea+Coffee*Milk*(coop_dates>milk_charge_date))
 consumption <- consumption[!names(consumption)%in%c("Name","Milk","Tea")]
 # awkwardly change the 'Milkconsumed' column back
 names(consumption)[which(names(consumption)=="Milkconsumed")] <- "Milk"
@@ -135,9 +145,13 @@ same_combined
 one_each_duplicate <- lapply(duplicate_list[both_same],"[",i=1,j=)
 
 one_each_duplicate_df <- do.call(rbind,one_each_duplicate)
-people_corrected <- rbind(one_each_duplicate_df,same_combined,people[!people$ID%in%duplicates,])
+people_nodoubles <- rbind(one_each_duplicate_df,same_combined,people[!people$ID%in%duplicates,])
+## there is, however, a TRIPLE: Anna Goncalves, person 14
+## people_nodoubles[which(people_nodoubles$ID==14),] 
+## let's keep the 3rd line of her data:
+people_corrected <- people_nodoubles[-which(people_nodoubles$ID==14)[c(1,2)],]
 
-write.csv(info,file="coffee_database/info.csv")
-write.csv(people_corrected,file="coffee_database/people.csv")
-write.csv(payments,file="coffee_database/payments.csv")
-write.csv(consumption,file="coffee_database/consumption.csv")
+write.csv(info,file="coffee_database/info.csv",row.names=FALSE)
+write.csv(people_corrected,file="coffee_database/people.csv",row.names=FALSE)
+write.csv(payments,file="coffee_database/payments.csv",row.names=FALSE)
+write.csv(consumption,file="coffee_database/consumption.csv",row.names=FALSE)
