@@ -78,7 +78,7 @@ accounts_alphabet <- accounts_pres[order(accounts_pres$Name),]
 accounts_alphabet[accounts_alphabet$ID==214,"balance"] <- 0
 
 ## and for Andrew, Flo and Thor?
-accounts_alphabet[accounts_alphabet$ID%in%c(77,18,240),"balance"] <- 0
+accounts_alphabet[accounts_alphabet$ID%in%c(18),"balance"] <- 0
 
 
 ## and here we can stop the filtering and merging.  accounts_alphabet contains all the info now.

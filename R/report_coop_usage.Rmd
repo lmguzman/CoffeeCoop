@@ -18,9 +18,12 @@ marked_coffees <- sum(consumption[which(consumption$data_date==max(info$Date)),"
 It has been `r since_last[[1]]` days since our sheet was updated. In that time we drank **`r consumed_coffees` coffees**, of which **`r marked_coffees`** were marked down; making our honesty during this period **`r round(100*marked_coffees/consumed_coffees)`%**
 
 ## The distribution of co-op balances:
-among users currently present in the building, **`r round(sum(accounts_alphabet$balance<0)/nrow(accounts_alphabet)*100)`%** owe the co-op money, representing a total debt of **`r sum(accounts$balance[accounts_alphabet$balance<0])`$.**  
+Among users currently present in the building, **`r round(sum(accounts_alphabet$balance<0)/nrow(accounts_alphabet)*100)`%** owe the co-op money, representing a total debt of **`r sum(accounts_alphabet$balance[accounts_alphabet$balance<0],na.rm=TRUE)`**. If we consider all users **EVER** in the co-op, the total debt is **`r sum(accounts_pres$balance[accounts_pres$balance<0],na.rm=TRUE)`**.
 
 **Please come and pay Andrew MacDonald (203).  Let's try to improve these numbers!**
+
+## milk consumption
+we drank `r with(subset(costnumbers,costnumbers$data_date==max(costnumbers$data_date)),sum(Milk))` milks, which altogether cost us `r with(subset(costnumbers,costnumbers$data_date==max(costnumbers$data_date)),sum(Milk*CostMilk))`.
 
 ```{r fig.cap="The distribution of balances"}
 dd <- with(density(accounts_alphabet$balance),data.frame(x,y))
