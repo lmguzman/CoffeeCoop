@@ -1,5 +1,5 @@
 ```{r echo=FALSE,message=FALSE}
-opts_chunk$set(message=FALSE,warning=FALSE,echo=FALSE)#dev="pdf",
+opts_chunk$set(message=FALSE,warning=FALSE,echo=FALSE,dev="pdf")
 ```
 
 ```{r}

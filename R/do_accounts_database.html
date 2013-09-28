@@ -134,43 +134,6 @@ hr {
 
 </style>
 
-<!-- Styles for R syntax highlighter -->
-<style type="text/css">
-   pre .operator,
-   pre .paren {
-     color: rgb(104, 118, 135)
-   }
-
-   pre .literal {
-     color: rgb(88, 72, 246)
-   }
-
-   pre .number {
-     color: rgb(0, 0, 205);
-   }
-
-   pre .comment {
-     color: rgb(76, 136, 107);
-   }
-
-   pre .keyword {
-     color: rgb(0, 0, 255);
-   }
-
-   pre .identifier {
-     color: rgb(0, 0, 0);
-   }
-
-   pre .string {
-     color: rgb(3, 106, 7);
-   }
-</style>
-
-<!-- R syntax highlighter -->
-<script type="text/javascript">
-var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
-hljs.initHighlightingOnLoad();
-</script>
 
 
 
@@ -178,291 +141,370 @@ hljs.initHighlightingOnLoad();
 </head>
 
 <body>
-<pre><code class="r">## The data for the coffee coop is stored in five spreadsheets info, which
-## shows how prices of things change over time consumption, which tracks
-## who has consumed milk or coffee, and when people, with information on
-## every participant of the Coffee Coop payments, which tracks all
-## movements of cash in and out of the Coop goods, data on all
-## non-monetary goods the coop produces.
-
-
-
-## the formula for a coffee-coop person&#39;s balance is calculated as
-
-## all payments - consumption*cost_when_consumed + all goods - any cash
-## payments to this person.
-
-## load libraries library(data.table)
-library(xtable)
-
-## read data
-consumption &lt;- read.csv(file = &quot;coffee_database/consumption.csv&quot;)
-</code></pre>
-
-<pre><code>## Warning: cannot open file &#39;coffee_database/consumption.csv&#39;: No such file
-## or directory
-</code></pre>
-
-<pre><code>## Error: cannot open the connection
-</code></pre>
-
-<pre><code class="r">payments &lt;- read.csv(file = &quot;coffee_database/payments.csv&quot;)
-</code></pre>
-
-<pre><code>## Warning: cannot open file &#39;coffee_database/payments.csv&#39;: No such file or
-## directory
-</code></pre>
-
-<pre><code>## Error: cannot open the connection
-</code></pre>
-
-<pre><code class="r">info &lt;- read.csv(file = &quot;coffee_database/info.csv&quot;)
-</code></pre>
-
-<pre><code>## Warning: cannot open file &#39;coffee_database/info.csv&#39;: No such file or
-## directory
-</code></pre>
-
-<pre><code>## Error: cannot open the connection
-</code></pre>
-
-<pre><code class="r">people &lt;- read.csv(file = &quot;coffee_database/people.csv&quot;)
-</code></pre>
-
-<pre><code>## Warning: cannot open file &#39;coffee_database/people.csv&#39;: No such file or
-## directory
-</code></pre>
-
-<pre><code>## Error: cannot open the connection
-</code></pre>
-
-<pre><code class="r">
-## use Base functions
-info$CostMilk[is.na(info$CostMilk)] &lt;- 0
-</code></pre>
-
-<pre><code>## Error: object &#39;info&#39; not found
-</code></pre>
-
-<pre><code class="r">## First, We merge on date and calculate cost of coffee and milk
-costnumbers &lt;- merge(consumption, info, by.x = &quot;data_date&quot;, by.y = &quot;Date&quot;)
-</code></pre>
-
-<pre><code>## Error: object &#39;consumption&#39; not found
-</code></pre>
-
-<pre><code class="r">
-costnumbers$owing &lt;- with(costnumbers, CostBlack * Coffee + Milk * CostMilk)
-</code></pre>
-
-<pre><code>## Error: object &#39;costnumbers&#39; not found
-</code></pre>
-
-<pre><code class="r">
-owing_total &lt;- with(costnumbers, tapply(owing, ID, sum))
-</code></pre>
-
-<pre><code>## Error: object &#39;costnumbers&#39; not found
-</code></pre>
-
-<pre><code class="r"># library(plyr)
-# ddply(.data=costnumbers,.variables=&#39;ID&#39;,summarize,total=sum(owing))
-
-debts &lt;- data.frame(ID = names(owing_total), owing_total, stringsAsFactors = FALSE)
-</code></pre>
-
-<pre><code>## Error: object &#39;owing_total&#39; not found
-</code></pre>
-
-<pre><code class="r">
-## now, how much did people pay?
-head(payments)
-</code></pre>
-
-<pre><code>## Error: object &#39;payments&#39; not found
-</code></pre>
-
-<pre><code class="r">monies &lt;- tapply(payments$Payment, payments$ID, sum)
-</code></pre>
-
-<pre><code>## Error: object &#39;payments&#39; not found
-</code></pre>
-
-<pre><code class="r">monies_paid &lt;- data.frame(ID = names(monies), monies, stringsAsFactors = FALSE)
-</code></pre>
-
-<pre><code>## Error: object &#39;monies&#39; not found
-</code></pre>
-
-<pre><code class="r">
-## combine please
-money &lt;- merge(debts, monies_paid, all = TRUE)
-</code></pre>
-
-<pre><code>## Error: object &#39;debts&#39; not found
-</code></pre>
-
-<pre><code class="r">str(money)
-</code></pre>
-
-<pre><code>## Error: object &#39;money&#39; not found
-</code></pre>
-
-<pre><code class="r">## has anyone paid but not used? vice versa?
-sapply(money, function(x) table(is.na(x)))
-</code></pre>
-
-<pre><code>## Error: object &#39;money&#39; not found
-</code></pre>
-
-<pre><code class="r">
-## in fact, these NAs are 0$
-money$monies[is.na(money$monies)] &lt;- 0
-</code></pre>
-
-<pre><code>## Error: object &#39;money&#39; not found
-</code></pre>
-
-<pre><code class="r">money
-</code></pre>
-
-<pre><code>## Error: object &#39;money&#39; not found
-</code></pre>
-
-<pre><code class="r">str(money)
-</code></pre>
-
-<pre><code>## Error: object &#39;money&#39; not found
-</code></pre>
-
-<pre><code class="r">
-alldat &lt;- merge(money, people, by = &quot;ID&quot;, all.x = TRUE)
-</code></pre>
-
-<pre><code>## Error: object &#39;money&#39; not found
-</code></pre>
-
-<pre><code class="r">
-inter &lt;- intersect(people$ID, money$ID)
-</code></pre>
-
-<pre><code>## Error: object &#39;money&#39; not found
-</code></pre>
-
-<pre><code class="r">people[!people$ID %in% inter, ]  ## these two have never taken anything from coop AND never paid
-</code></pre>
-
-<pre><code>## Error: object &#39;people&#39; not found
-</code></pre>
-
-<pre><code class="r">
-money[!money$ID %in% inter, ]
-</code></pre>
-
-<pre><code>## Error: object &#39;money&#39; not found
-</code></pre>
-
-<pre><code class="r">inter[!inter %in% money$ID]
-</code></pre>
-
-<pre><code>## Error: object &#39;inter&#39; not found
-</code></pre>
-
-<pre><code class="r">all(inter %in% money$ID)
-</code></pre>
-
-<pre><code>## Error: object &#39;inter&#39; not found
-</code></pre>
-
-<pre><code class="r">
-
-
-accounts &lt;- data.frame(ID = alldat$ID, Name = alldat$Printed.Name, balance = alldat$monies - 
-    alldat$owing_total)
-</code></pre>
-
-<pre><code>## Error: object &#39;alldat&#39; not found
-</code></pre>
-
-<pre><code class="r">accounts_pres &lt;- accounts[!alldat$Gone, ]
-</code></pre>
-
-<pre><code>## Error: object &#39;accounts&#39; not found
-</code></pre>
-
-<pre><code class="r">accounts_alphabet &lt;- accounts_pres[order(accounts_pres$Name), ]
-</code></pre>
-
-<pre><code>## Error: object &#39;accounts_pres&#39; not found
-</code></pre>
-
-<pre><code class="r">
-print(xtable(accounts_alphabet), type = &quot;latex&quot;)
-</code></pre>
-
-<pre><code>## Error: object &#39;accounts_alphabet&#39; not found
-</code></pre>
-
-<pre><code class="r">#
-# 
-# ## make them data.tables is.na(test$CostMilk) consumption_dt &lt;-
-# data.table(consumption,key=c(&#39;data_date&#39;)) info_dt &lt;-
-# data.table(info,key=&#39;Date&#39;)
-# 
-# cost_over_time &lt;-
-# consumption_dt[info_dt,list(ID,CoffeeCost=CostBlack*Coffee,CostMilk=Milk*CostMilk)]
-# 
-# setkey(cost_over_time,&#39;ID&#39;)
-# 
-# all_consumption &lt;-
-# cost_over_time[,list(cost_consumed=sum(CoffeeCost+CostMilk,na.rm=TRUE)),by=&#39;ID&#39;]
-# 
-# ## combine with payments payments_dt &lt;- data.table(payments,key=&#39;ID&#39;) ##
-# all payments ever all_payments &lt;-
-# payments_dt[,list(paid=sum(Payment)),by=ID]
-# 
-# ## who are the people in the coop people_dt &lt;-
-# data.table(people,key=&#39;ID&#39;)
-# 
-# ## who is here present_people &lt;-
-# people_dt[!people_dt$Gone,list(ID,Printed.Name)]
-# 
-# coop_use &lt;- merge(all_consumption,all_payments,all=TRUE)
-# 
-# accounts &lt;-
-# coop_use[present_people,list(ID,balance=paid-cost_consumed,Printed.Name)]
-# 
-# library(xtable)
-# write(print(xtable(accounts),type=&#39;html&#39;),file=&#39;test.html&#39;)
-# 
-# print(xtable(accounts),type=&#39;latex&#39;)
-
-# library(pander) write(print(pander(accounts)),file=&#39;testpander.md&#39;)
-
-# cheaters &lt;- all_consumption[!all_payments] setkey(cheaters,ID) who are
-# the cheaters? people_dt[cheaters]
-
-# tables() people_dt &lt;- data.table(people,key=&#39;ID&#39;)
-# 
-# info_dt[&#39;2010-08-04&#39;] consumption_dt[info_dt]
-# 
-# consumption_dt[info_dt,CostBlack*Coffee+Tea*CostMilk]
-# 
-# pplmoney &lt;-
-# consumption_dt[info_dt,list(ID,CoffeeCost=CostBlack*Coffee,CostMilk=Tea*CostMilk)]
-# pplmoney[,list(sum(CoffeeCost),sum(CostMilk)),by=ID]
-# 
-# merge(consumption_dt,people_dt,by=&#39;ID&#39;)
-# 
-# consumption_dt[J(people$ID)]
-# 
-# consumption_dt[J(&#39;2013-04-22&#39;,221)]
-# 
-# consumption_dt[J(&#39;&#39;,221)] consumption_dt[people]
-
-## this ends with the data all nicely organized into a sheet showing Milk
-## and Coffee consumption.
-</code></pre>
+<p>\begin{longtable}{|p{5cm}|r|p{9cm}|p{6cm}|l|}
+ \Large Name &amp; \Large balance &amp; \Large \textbf{Coffee} &amp; \Large \textbf{Milk} &amp; \Large ID \ 
+  \hline \endhead Adam Wilkinson &amp; 0.60 &amp;  &amp;  &amp; 2 \ 
+   \hline
+Alana Schick &amp; \textbf{-13.65} &amp;  &amp;  &amp; 4 \ 
+   \hline
+Alathea LeTaw &amp; 3.05 &amp;  &amp;  &amp; 6 \ 
+   \hline
+Alison Poner &amp; \textbf{-4.85} &amp;  &amp;  &amp; 9 \ 
+   \hline
+Alistair Blachford &amp; \textbf{-10.60} &amp;  &amp;  &amp; 10 \ 
+   \hline
+Allan DeBono &amp; 1.35 &amp;  &amp;  &amp; 11 \ 
+   \hline
+Andrea H &amp; \textbf{-1.70} &amp;  &amp;  &amp; 16 \ 
+   \hline
+Andrej Arsovski &amp; \textbf{-10.40} &amp;  &amp;  &amp; 253 \ 
+   \hline
+Andrew MacDonald &amp; 0.00 &amp;  &amp;  &amp; 18 \ 
+   \hline
+Ang\&#39;elica Gonz\&#39;alez &amp; 6.50 &amp;  &amp;  &amp; 19 \ 
+   \hline
+Angie Nicolas &amp; 4.90 &amp;  &amp;  &amp; 20 \ 
+   \hline
+Anna M\&#39;{a}ria Cserg\H{o} &amp; 12.55 &amp;  &amp;  &amp; 22 \ 
+   \hline
+Anne Bjorkman &amp; 0.60 &amp;  &amp;  &amp; 25 \ 
+   \hline
+Annika &amp; \textbf{-0.45} &amp;  &amp;  &amp; 27 \ 
+   \hline
+Armando Geraldes &amp; 17.10 &amp;  &amp;  &amp; 28 \ 
+   \hline
+Barbara Koot &amp; 13.00 &amp;  &amp;  &amp; 32 \ 
+   \hline
+Becca Gooding &amp; \textbf{-2.35} &amp;  &amp;  &amp; 33 \ 
+   \hline
+Becca Kordas &amp; 8.20 &amp;  &amp;  &amp; 34 \ 
+   \hline
+Bill Harrower &amp; 7.95 &amp;  &amp;  &amp; 36 \ 
+   \hline
+Birgit Schwarz &amp; \textbf{-2.85} &amp;  &amp;  &amp; 37 \ 
+   \hline
+Brianna Wright &amp; 2.15 &amp;  &amp;  &amp; 38 \ 
+   \hline
+Brook Moyers &amp; 2.10 &amp;  &amp;  &amp; 40 \ 
+   \hline
+Cait Nelson &amp; \textbf{-2.30} &amp;  &amp;  &amp; 41 \ 
+   \hline
+Carling Gerlinsky &amp; \textbf{-0.95} &amp;  &amp;  &amp; 43 \ 
+   \hline
+Carl Rothfels &amp; 8.40 &amp;  &amp;  &amp; 44 \ 
+   \hline
+Caroline Chenard &amp; \textbf{-0.25} &amp;  &amp;  &amp; 45 \ 
+   \hline
+Catherine Hoffman &amp; 9.70 &amp;  &amp;  &amp; 46 \ 
+   \hline
+Charles Hefer &amp; 28.20 &amp;  &amp;  &amp; 47 \ 
+   \hline
+Charlotte Whitney &amp; \textbf{-7.05} &amp;  &amp;  &amp; 48 \ 
+   \hline
+Chris Grassa &amp; \textbf{-44.30} &amp;  &amp;  &amp; 49 \ 
+   \hline
+Chris Harley &amp; 36.80 &amp;  &amp;  &amp; 50 \ 
+   \hline
+Chris Sears &amp; 23.66 &amp;  &amp;  &amp; 51 \ 
+   \hline
+Christine Grossen &amp; 4.90 &amp;  &amp;  &amp; 52 \ 
+   \hline
+Daisie Huang &amp; 4.70 &amp;  &amp;  &amp; 54 \ 
+   \hline
+Dan Ebert &amp; \textbf{-9.35} &amp;  &amp;  &amp; 55 \ 
+   \hline
+Dave Allen &amp; 4.55 &amp;  &amp;  &amp; 57 \ 
+   \hline
+David Smith &amp; 0.00 &amp;  &amp;  &amp; 58 \ 
+   \hline
+David Van Dyken &amp; \textbf{-8.75} &amp;  &amp;  &amp; 59 \ 
+   \hline
+Denis Tikhonenkov &amp; \textbf{-11.85} &amp;  &amp;  &amp; 60 \ 
+   \hline
+Diana Rennison &amp; 4.20 &amp;  &amp;  &amp; 61 \ 
+   \hline
+Diane Srivastava &amp; 52.45 &amp;  &amp;  &amp; 62 \ 
+   \hline
+Dolph Schluter &amp; 10.80 &amp;  &amp;  &amp; 63 \ 
+   \hline
+Dylan Burge &amp; \textbf{-0.60} &amp;  &amp;  &amp; 65 \ 
+   \hline
+Edy Piascik &amp; 10.90 &amp;  &amp;  &amp; 67 \ 
+   \hline
+Elisabeth Hehenberger &amp; 15.90 &amp;  &amp;  &amp; 69 \ 
+   \hline
+Elizabeth Goundie &amp; \textbf{-1.85} &amp;  &amp;  &amp; 252 \ 
+   \hline
+Elizabeth Kleynhans &amp; 8.20 &amp;  &amp;  &amp; 70 \ 
+   \hline
+Emily Lomax &amp; \textbf{-2.50} &amp;  &amp;  &amp; 72 \ 
+   \hline
+Erika Robertson &amp; \textbf{-7.00} &amp;  &amp;  &amp; 73 \ 
+   \hline
+Evelyn Byer &amp; 1.20 &amp;  &amp;  &amp; 256 \ 
+   \hline
+Fabien Burki &amp; 12.40 &amp;  &amp;  &amp; 76 \ 
+   \hline
+Fabiola Ospina &amp; 18.95 &amp;  &amp;  &amp; 263 \ 
+   \hline
+Florence D\&#39;ebarre &amp; 39.00 &amp;  &amp;  &amp; 77 \ 
+   \hline
+Floyd Bardell &amp; \textbf{-19.50} &amp;  &amp;  &amp; 78 \ 
+   \hline
+Fran\c{c}ois Blanquart &amp; \textbf{-1.15} &amp;  &amp;  &amp; 251 \ 
+   \hline
+Genevieve Leduc-Robert &amp; 5.45 &amp;  &amp;  &amp; 79 \ 
+   \hline
+Gina Conte &amp; \textbf{-0.70} &amp;  &amp;  &amp; 82 \ 
+   \hline
+Greg Baute &amp; 13.70 &amp;  &amp;  &amp; 84 \ 
+   \hline
+Greg Gavelis &amp; 6.00 &amp;  &amp;  &amp; 85 \ 
+   \hline
+Gregory Crutsinger &amp; 10.50 &amp;  &amp;  &amp; 86 \ 
+   \hline
+Gregory Ross &amp; 3.50 &amp;  &amp;  &amp; 87 \ 
+   \hline
+Greg Owens &amp; 7.60 &amp;  &amp;  &amp; 88 \ 
+   \hline
+Gwylim Blackburn &amp; \textbf{-2.30} &amp;  &amp;  &amp; 89 \ 
+   \hline
+Gyan Harwood &amp; \textbf{-15.60} &amp;  &amp;  &amp; 90 \ 
+   \hline
+Hanson Wong &amp; 2.00 &amp;  &amp;  &amp; 93 \ 
+   \hline
+Heather Piwowar &amp; 10.70 &amp;  &amp;  &amp; 94 \ 
+   \hline
+Isabel Marques &amp; \textbf{-5.95} &amp;  &amp;  &amp; 250 \ 
+   \hline
+Jamie Leathem &amp; \textbf{-0.25} &amp;  &amp;  &amp; 100 \ 
+   \hline
+Jan Finke &amp; \textbf{-5.85} &amp;  &amp;  &amp; 103 \ 
+   \hline
+Jan Janouskovec &amp; 5.00 &amp;  &amp;  &amp; 106 \ 
+   \hline
+Jasmine Ono &amp; 6.90 &amp;  &amp;  &amp; 108 \ 
+   \hline
+Javier Del campo &amp; 8.55 &amp;  &amp;  &amp; 258 \ 
+   \hline
+Jeff R. Werner &amp; \textbf{-28.10} &amp;  &amp;  &amp; 254 \ 
+   \hline
+Jen Foley &amp; 12.05 &amp;  &amp;  &amp; 262 \ 
+   \hline
+Jennifer Guevara &amp; \textbf{-0.75} &amp;  &amp;  &amp; 110 \ 
+   \hline
+Jennifer Ruskey &amp; \textbf{-5.00} &amp;  &amp;  &amp; 111 \ 
+   \hline
+Jennifer Wirth &amp; \textbf{-1.00} &amp;  &amp;  &amp; 112 \ 
+   \hline
+Jeremy Draghi &amp; 4.90 &amp;  &amp;  &amp; 114 \ 
+   \hline
+Jessica Garzke &amp; 8.95 &amp;  &amp;  &amp; 115 \ 
+   \hline
+Jessica Lu &amp; 0.00 &amp;  &amp;  &amp; 116 \ 
+   \hline
+Ji Yang &amp; 3.75 &amp;  &amp;  &amp; 117 \ 
+   \hline
+Jocelyn Nelson &amp; 0.25 &amp;  &amp;  &amp; 118 \ 
+   \hline
+Joel Kelly &amp; 0.75 &amp;  &amp;  &amp; 260 \ 
+   \hline
+Joey Bernhardt &amp; \textbf{-7.35} &amp;  &amp;  &amp; 119 \ 
+   \hline
+Juan Santos &amp; 17.65 &amp;  &amp;  &amp; 123 \ 
+   \hline
+Julia Gustavsen &amp; \textbf{-1.30} &amp;  &amp;  &amp; 124 \ 
+   \hline
+Julian Heavyside &amp; 19.87 &amp;  &amp;  &amp; 125 \ 
+   \hline
+Kat Anderson &amp; 1.90 &amp;  &amp;  &amp; 127 \ 
+   \hline
+Kate Ostevik &amp; 4.90 &amp;  &amp;  &amp; 128 \ 
+   \hline
+Katherine Ransom &amp; \textbf{-0.45} &amp;  &amp;  &amp; 129 \ 
+   \hline
+Kathryn Turner &amp; 29.70 &amp;  &amp;  &amp; 130 \ 
+   \hline
+Katie Lotterhos &amp; 10.25 &amp;  &amp;  &amp; 131 \ 
+   \hline
+Kay Hodgins &amp; 24.45 &amp;  &amp;  &amp; 133 \ 
+   \hline
+Keith Adams &amp; 9.20 &amp;  &amp;  &amp; 134 \ 
+   \hline
+Kevin Wakeman &amp; \textbf{-1.25} &amp;  &amp;  &amp; 135 \ 
+   \hline
+Kieran Samuk &amp; 9.20 &amp;  &amp;  &amp; 136 \ 
+   \hline
+Kira Delmore &amp; 30.50 &amp;  &amp;  &amp; 137 \ 
+   \hline
+Kristina Michaux &amp; 15.65 &amp;  &amp;  &amp; 261 \ 
+   \hline
+Kristin Nurkowski &amp; \textbf{-13.75} &amp;  &amp;  &amp; 138 \ 
+   \hline
+Kurt Trzcinski &amp; 7.30 &amp;  &amp;  &amp; 257 \ 
+   \hline
+Kyle Crowther &amp; \textbf{-5.00} &amp;  &amp;  &amp; 139 \ 
+   \hline
+Larissa Schaub &amp; \textbf{-0.65} &amp;  &amp;  &amp; 140 \ 
+   \hline
+Lesha Koop Hines &amp; \textbf{-2.65} &amp;  &amp;  &amp; 142 \ 
+   \hline
+Leticia &amp; \textbf{-0.50} &amp;  &amp;  &amp; 143 \ 
+   \hline
+Lindsay Aylesworth &amp; 3.70 &amp;  &amp;  &amp; 145 \ 
+   \hline
+Lizzie Wolkovich &amp; 1.15 &amp;  &amp;  &amp; 146 \ 
+   \hline
+Loren Rieseberg &amp; 14.45 &amp;  &amp;  &amp; 147 \ 
+   \hline
+Luke Halpin &amp; \textbf{-1.00} &amp;  &amp;  &amp; 148 \ 
+   \hline
+Marco Todesco &amp; 0.60 &amp;  &amp;  &amp; 149 \ 
+   \hline
+Mariana Diaz &amp; 2.50 &amp;  &amp;  &amp; 150 \ 
+   \hline
+Mariano Rodriguez-Cabal &amp; 2.80 &amp;  &amp;  &amp; 151 \ 
+   \hline
+Marilou Bourdages &amp; \textbf{-11.85} &amp;  &amp;  &amp; 152 \ 
+   \hline
+Marli Vlok &amp; \textbf{-12.35} &amp;  &amp;  &amp; 154 \ 
+   \hline
+Martin Kolisko &amp; \textbf{-0.55} &amp;  &amp;  &amp; 255 \ 
+   \hline
+Marybel Soto &amp; 15.70 &amp;  &amp;  &amp; 155 \ 
+   \hline
+Mary O&#39;Connor &amp; 15.00 &amp;  &amp;  &amp; 156 \ 
+   \hline
+Matt Barbour &amp; \textbf{-0.60} &amp;  &amp;  &amp; 157 \ 
+   \hline
+Matt Casselman &amp; \textbf{-1.00} &amp;  &amp;  &amp; 158 \ 
+   \hline
+Matt Osmond &amp; \textbf{-5.65} &amp;  &amp;  &amp; 160 \ 
+   \hline
+Matt Siegle &amp; 6.60 &amp;  &amp;  &amp; 161 \ 
+   \hline
+Maxence Salomon &amp; 8.35 &amp;  &amp;  &amp; 163 \ 
+   \hline
+Megan Bontrager &amp; \textbf{-10.00} &amp;  &amp;  &amp; 165 \ 
+   \hline
+Megan Vaughan &amp; \textbf{-17.00} &amp;  &amp;  &amp; 167 \ 
+   \hline
+Melissa Bodner &amp; 0.20 &amp;  &amp;  &amp; 168 \ 
+   \hline
+Michael Scott &amp; 32.80 &amp;  &amp;  &amp; 169 \ 
+   \hline
+Mike Champion &amp; 12.85 &amp;  &amp;  &amp; 171 \ 
+   \hline
+Mike Whitlock &amp; 14.60 &amp;  &amp;  &amp; 172 \ 
+   \hline
+Nancy Lee &amp; \textbf{-5.40} &amp;  &amp;  &amp; 174 \ 
+   \hline
+Naoji Yubuki &amp; 20.90 &amp;  &amp;  &amp; 175 \ 
+   \hline
+Naomi Fast &amp; 3.10 &amp;  &amp;  &amp; 176 \ 
+   \hline
+Navdeep Gill &amp; \textbf{-0.70} &amp;  &amp;  &amp; 178 \ 
+   \hline
+Nicole Littlemore &amp; 1.50 &amp;  &amp;  &amp; 180 \ 
+   \hline
+Ninam Cormetto &amp; \textbf{-0.50} &amp;  &amp;  &amp; 181 \ 
+   \hline
+Noriko Okamoto &amp; 0.20 &amp;  &amp;  &amp; 184 \ 
+   \hline
+Pat Tamkee &amp; 9.85 &amp;  &amp;  &amp; 188 \ 
+   \hline
+Paula Omena &amp; \textbf{-11.40} &amp;  &amp;  &amp; 189 \ 
+   \hline
+Penny Birnam &amp; 9.50 &amp;  &amp;  &amp; 192 \ 
+   \hline
+Qin Li &amp; 11.60 &amp;  &amp;  &amp; 194 \ 
+   \hline
+Rebecca Seifert &amp; 1.55 &amp;  &amp;  &amp; 196 \ 
+   \hline
+Reme Beyers &amp; \textbf{-2.00} &amp;  &amp;  &amp; 197 \ 
+   \hline
+Rick Taylor &amp; 11.55 &amp;  &amp;  &amp; 199 \ 
+   \hline
+Robert Colautti &amp; 29.90 &amp;  &amp;  &amp; 200 \ 
+   \hline
+Robin LeCraw &amp; 0.15 &amp;  &amp;  &amp; 201 \ 
+   \hline
+Rose Andrew &amp; 2.10 &amp;  &amp;  &amp; 202 \ 
+   \hline
+Ross Whippo &amp; \textbf{-14.60} &amp;  &amp;  &amp; 203 \ 
+   \hline
+Roy Turkington &amp; \textbf{-20.80} &amp;  &amp;  &amp; 205 \ 
+   \hline
+Ruth Sharpe &amp; \textbf{-2.70} &amp;  &amp;  &amp; 208 \ 
+   \hline
+Ryan Germain &amp; \textbf{-4.00} &amp;  &amp;  &amp; 209 \ 
+   \hline
+Ryan Shartau &amp; 10.80 &amp;  &amp;  &amp; 210 \ 
+   \hline
+Sabrina Shartau &amp; \textbf{-1.90} &amp;  &amp;  &amp; 211 \ 
+   \hline
+Saemi Sveinsson &amp; 10.95 &amp;  &amp;  &amp; 212 \ 
+   \hline
+Sally Aitken &amp; \textbf{-1.00} &amp;  &amp;  &amp; 213 \ 
+   \hline
+Sally Otto &amp; 0.00 &amp;  &amp;  &amp; 214 \ 
+   \hline
+Sam Yeaman &amp; 35.90 &amp;  &amp;  &amp; 215 \ 
+   \hline
+Santiago David &amp; 1.45 &amp;  &amp;  &amp; 216 \ 
+   \hline
+Sarah Amundrud &amp; \textbf{-2.00} &amp;  &amp;  &amp; 217 \ 
+   \hline
+Sarah Yakimowski &amp; 5.75 &amp;  &amp;  &amp; 218 \ 
+   \hline
+Sara Miller &amp; 7.05 &amp;  &amp;  &amp; 219 \ 
+   \hline
+S\&#39;ebastien Renaut &amp; 110.53 &amp;  &amp;  &amp; 221 \ 
+   \hline
+Shao-Lun Liu &amp; 2.80 &amp;  &amp;  &amp; 222 \ 
+   \hline
+Sheila Byers &amp; \textbf{-0.35} &amp;  &amp;  &amp; 259 \ 
+   \hline
+Shiao Hayakawa &amp; 7.95 &amp;  &amp;  &amp; 223 \ 
+   \hline
+Simone Immle &amp; \textbf{-11.20} &amp;  &amp;  &amp; 226 \ 
+   \hline
+Stefan Dick &amp; 5.85 &amp;  &amp;  &amp; 228 \ 
+   \hline
+Stephanie A-G &amp; \textbf{-11.45} &amp;  &amp;  &amp; 229 \ 
+   \hline
+Steve Henstra &amp; 4.85 &amp;  &amp;  &amp; 231 \ 
+   \hline
+Stilianos Louca &amp; 0.00 &amp;  &amp;  &amp; 232 \ 
+   \hline
+Susan Fassnacht &amp; 2.00 &amp;  &amp;  &amp; 233 \ 
+   \hline
+Tanya MacInnes &amp; \textbf{-1.25} &amp;  &amp;  &amp; 234 \ 
+   \hline
+Teale Dunsford &amp; \textbf{-21.90} &amp;  &amp;  &amp; 235 \ 
+   \hline
+Ted Hart &amp; \textbf{-60.55} &amp;  &amp;  &amp; 236 \ 
+   \hline
+Theraesa Coyle &amp; \textbf{-10.95} &amp;  &amp;  &amp; 238 \ 
+   \hline
+Thierry Heger &amp; 0.00 &amp;  &amp;  &amp; 239 \ 
+   \hline
+Thor Veen &amp; 33.60 &amp;  &amp;  &amp; 240 \ 
+   \hline
+Thuy Nguyen &amp; 2.60 &amp;  &amp;  &amp; 241 \ 
+   \hline
+Virginia Noble &amp; 0.00 &amp;  &amp;  &amp; 244 \ 
+   \hline
+William Mountbatten &amp; \textbf{-0.15} &amp;  &amp;  &amp; 246 \ 
+   \hline
+Yoshi Hirakawa &amp; 0.50 &amp;  &amp;  &amp; 247 \ 
+   \hline
+Yukiko Stranger-Jones &amp; 5.45 &amp;  &amp;  &amp; 248 \ 
+   \hline
+Zach Daly &amp; \textbf{-10.60} &amp;  &amp;  &amp; 249 \ 
+   \hline
+\hline
+\end{longtable}</p>
 
 </body>
 
