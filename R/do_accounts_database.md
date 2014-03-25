@@ -10,7 +10,7 @@ Alathea LeTaw & 4.90 &  &  & 6 \\
    \hline
 Alison Porter & 2.15 &  &  & 9 \\ 
    \hline
-Alistair Blachford & \textbf{-11.30} &  &  & 10 \\ 
+Alistair Blachford & 8.70 &  &  & 10 \\ 
    \hline
 Allan DeBono & 1.35 &  &  & 11 \\ 
    \hline
@@ -22,19 +22,19 @@ Andrej Arsovski & 10.40 &  &  & 253 \\
    \hline
 Andrew MacDonald & 0.00 &  &  & 18 \\ 
    \hline
-Angela MacDonald & 7.75 &  &  & 268 \\ 
+Angela MacDonald & 27.75 &  &  & 268 \\ 
    \hline
 Ang\'elica Gonz\'alez & 8.65 &  &  & 19 \\ 
    \hline
 Angie Nicolas & 2.65 &  &  & 20 \\ 
    \hline
-Anna M\'{a}ria Cserg\H{o} & 0.30 &  &  & 22 \\ 
+Anna M\'{a}ria Cserg\H{o} & 5.30 &  &  & 22 \\ 
    \hline
 Anne Bjorkman & 0.60 &  &  & 25 \\ 
    \hline
 Annika & \textbf{-0.45} &  &  & 27 \\ 
    \hline
-Armando Geraldes & 34.00 &  &  & 28 \\ 
+Armando Geraldes & 74.00 &  &  & 28 \\ 
    \hline
 Azaria Botta & 12.00 &  &  & 264 \\ 
    \hline
@@ -60,23 +60,23 @@ Carl Rothfels & 7.00 &  &  & 44 \\
    \hline
 Caroline Chenard & \textbf{-0.25} &  &  & 45 \\ 
    \hline
-Catherine Hoffman & 6.05 &  &  & 46 \\ 
+Catherine Hoffman & 13.05 &  &  & 46 \\ 
    \hline
-Charles Hefer & \textbf{-24.65} &  &  & 47 \\ 
+Charles Hefer & 25.35 &  &  & 47 \\ 
    \hline
 Charlotte Whitney & \textbf{-7.05} &  &  & 48 \\ 
    \hline
-Chris Deeg & \textbf{-1.75} &  &  & 283 \\ 
+Chris Deeg & 28.25 &  &  & 283 \\ 
    \hline
 Chris Grassa & 18.00 &  &  & 49 \\ 
    \hline
 Chris Harley & 4.10 &  &  & 50 \\ 
    \hline
-Chris Muir & 17.70 &  &  & 269 \\ 
+Chris Muir & 37.70 &  &  & 269 \\ 
    \hline
 Chris Sears & \textbf{-1.54} &  &  & 51 \\ 
    \hline
-Christine Grossen & 7.70 &  &  & 52 \\ 
+Christine Grossen & 15.70 &  &  & 52 \\ 
    \hline
 Daan Van Stigt & 4.10 &  &  & 275 \\ 
    \hline
@@ -92,27 +92,27 @@ Diana Rennison & 2.85 &  &  & 61 \\
    \hline
 Diane Srivastava & 34.30 &  &  & 62 \\ 
    \hline
-Dolph Schluter & \textbf{-8.30} &  &  & 63 \\ 
+Dolph Schluter & 11.70 &  &  & 63 \\ 
    \hline
 Dylan Burge & \textbf{-0.95} &  &  & 65 \\ 
    \hline
 Edy Piascik & 9.40 &  &  & 67 \\ 
    \hline
-Elisabeth Hehenberger & \textbf{-6.10} &  &  & 69 \\ 
+Elisabeth Hehenberger & 33.90 &  &  & 69 \\ 
    \hline
 Elizabeth Goundie & 1.65 &  &  & 252 \\ 
    \hline
-Elizabeth Kleynhans & 17.50 &  &  & 70 \\ 
+Elizabeth Kleynhans & 37.50 &  &  & 70 \\ 
    \hline
 Emily Lomax & \textbf{-2.50} &  &  & 72 \\ 
    \hline
 Erika Robertson & \textbf{-7.00} &  &  & 73 \\ 
    \hline
-Evan Hersh & \textbf{-7.55} &  &  & 265 \\ 
+Evan Hersh & 12.45 &  &  & 265 \\ 
    \hline
 Evelyn Byer & 5.20 &  &  & 256 \\ 
    \hline
-Fabien Burki & 24.15 &  &  & 76 \\ 
+Fabien Burki & 64.15 &  &  & 76 \\ 
    \hline
 Fabiola Ospina & 6.70 &  &  & 263 \\ 
    \hline
@@ -128,7 +128,7 @@ Genevieve Leduc-Robert & 1.60 &  &  & 79 \\
    \hline
 Gina Conte & \textbf{-0.70} &  &  & 82 \\ 
    \hline
-Greg Baute & \textbf{-0.65} &  &  & 84 \\ 
+Greg Baute & 9.35 &  &  & 84 \\ 
    \hline
 Greg Gavelis & 6.00 &  &  & 85 \\ 
    \hline
@@ -148,9 +148,9 @@ Hanson Wong & 1.15 &  &  & 93 \\
    \hline
 Heather Piwowar & 10.70 &  &  & 94 \\ 
    \hline
-Henrik Kasche & \textbf{-0.50} &  &  & 272 \\ 
+Henrik Kasche & 4.50 &  &  & 272 \\ 
    \hline
-Isabel Marques & \textbf{-7.70} &  &  & 250 \\ 
+Isabel Marques & \textbf{-6.70} &  &  & 250 \\ 
    \hline
 Jamie Leathem & \textbf{-0.25} &  &  & 100 \\ 
    \hline
@@ -170,7 +170,7 @@ Jennifer Guevara & \textbf{-1.10} &  &  & 110 \\
    \hline
 Jennifer Ruskey & \textbf{-5.00} &  &  & 111 \\ 
    \hline
-Jennifer Sunday & 2.80 &  &  & 284 \\ 
+Jennifer Sunday & 7.80 &  &  & 284 \\ 
    \hline
 Jennifer Wirth & \textbf{-1.00} &  &  & 112 \\ 
    \hline
@@ -210,7 +210,7 @@ Kay Hodgins & 5.45 &  &  & 133 \\
    \hline
 Kaylee Byers & 12.20 &  &  & 276 \\ 
    \hline
-Keith Adams & 15.90 &  &  & 134 \\ 
+Keith Adams & 35.90 &  &  & 134 \\ 
    \hline
 Kevin Wakeman & \textbf{-1.25} &  &  & 135 \\ 
    \hline
@@ -224,11 +224,11 @@ Kristin Nurkowski & 4.70 &  &  & 138 \\
    \hline
 Kurt Trzcinski & 4.95 &  &  & 257 \\ 
    \hline
-Kyle Crowther & \textbf{-5.85} &  &  & 139 \\ 
+Kyle Crowther & 4.15 &  &  & 139 \\ 
    \hline
 Larissa Schaub & \textbf{-0.65} &  &  & 140 \\ 
    \hline
-Lesha Koop & \textbf{-4.85} &  &  & 142 \\ 
+Lesha Koop & 15.15 &  &  & 142 \\ 
    \hline
 Leticia & \textbf{-0.50} &  &  & 143 \\ 
    \hline
@@ -256,7 +256,7 @@ Martin Kolisko & \textbf{-6.90} &  &  & 255 \\
    \hline
 Marybel Soto & \textbf{-3.90} &  &  & 155 \\ 
    \hline
-Mary O'Connor & 5.00 &  &  & 156 \\ 
+Mary O'Connor & 70.00 &  &  & 156 \\ 
    \hline
 Matt Barbour & 11.25 &  &  & 157 \\ 
    \hline
@@ -270,7 +270,7 @@ Matt Siegle & \textbf{-17.90} &  &  & 161 \\
    \hline
 Maxence Salomon & 8.35 &  &  & 163 \\ 
    \hline
-Megan Bontrager & 1.10 &  &  & 165 \\ 
+Megan Bontrager & 31.10 &  &  & 165 \\ 
    \hline
 Megan Vaughan & 2.30 &  &  & 167 \\ 
    \hline
@@ -282,7 +282,7 @@ Michael Scott & 12.65 &  &  & 169 \\
    \hline
 Mike Champion & 3.80 &  &  & 171 \\ 
    \hline
-Mike Whitlock & 3.45 &  &  & 172 \\ 
+Mike Whitlock & 5.45 &  &  & 172 \\ 
    \hline
 Mikey Kantor & \textbf{-1.90} &  &  & 277 \\ 
    \hline
@@ -308,7 +308,7 @@ Penny Birnam & 8.80 &  &  & 192 \\
    \hline
 Philip Chebaya & \textbf{-8.35} &  &  & 273 \\ 
    \hline
-Phillipe Fernandez & 12.20 &  &  & 270 \\ 
+Phillipe Fernandez & 32.20 &  &  & 270 \\ 
    \hline
 Qin Li & 4.10 &  &  & 194 \\ 
    \hline
@@ -316,11 +316,11 @@ Rebecca Seifert & 1.55 &  &  & 196 \\
    \hline
 Reme Beyers & \textbf{-2.00} &  &  & 197 \\ 
    \hline
-Rick Taylor & 4.70 &  &  & 199 \\ 
+Rick Taylor & 24.70 &  &  & 199 \\ 
    \hline
 Robert Colautti & 12.75 &  &  & 200 \\ 
    \hline
-Robin LeCraw & 0.15 &  &  & 201 \\ 
+Robin LeCraw & 2.65 &  &  & 201 \\ 
    \hline
 Rose Andrew & 1.05 &  &  & 202 \\ 
    \hline
@@ -336,7 +336,7 @@ Ryan Shartau & 7.05 &  &  & 210 \\
    \hline
 Sabrina Shartau & \textbf{-1.90} &  &  & 211 \\ 
    \hline
-Saemi Sveinsson & 23.30 &  &  & 212 \\ 
+Saemi Sveinsson & 63.30 &  &  & 212 \\ 
    \hline
 Sally Aitken & \textbf{-1.00} &  &  & 213 \\ 
    \hline
@@ -346,21 +346,21 @@ Sam Yeaman & 22.10 &  &  & 215 \\
    \hline
 Santiago David & 0.50 &  &  & 216 \\ 
    \hline
-Sarah Amundrud & \textbf{-1.00} &  &  & 217 \\ 
+Sarah Amundrud & 4.00 &  &  & 217 \\ 
    \hline
 Sarah Yakimowski & \textbf{-4.50} &  &  & 218 \\ 
    \hline
-Sara Miller & \textbf{-4.35} &  &  & 219 \\ 
+Sara Miller & 6.23 &  &  & 219 \\ 
    \hline
-S\'ebastien Renaut & 111.32 &  &  & 221 \\ 
+S\'ebastien Renaut & \textbf{-114.24} &  &  & 221 \\ 
    \hline
 Seema Sheth & 14.40 &  &  & 285 \\ 
    \hline
 Shao-Lun Liu & 2.80 &  &  & 222 \\ 
    \hline
-Sheila Byers & \textbf{-0.35} &  &  & 259 \\ 
+Sheila Byers & 1.65 &  &  & 259 \\ 
    \hline
-Shiao Hayakawa & \textbf{-2.55} &  &  & 223 \\ 
+Shiao Hayakawa & 17.45 &  &  & 223 \\ 
    \hline
 Simone Immle & \textbf{-11.20} &  &  & 226 \\ 
    \hline
