@@ -29,7 +29,7 @@ ID,Printed.Name,Email,Start,Gone,Gone.Date
 30,"Art Shostak",NA,NA,TRUE,2011/06/14
 31,"Ashley Smith",NA,NA,TRUE,2012/01/30
 32,"Barbara Koot",NA,2012/11/28,FALSE,NA
-33,"Becca Gooding",gooding@zoology.ubc.ca,NA,FALSE,NA
+33,"Becca Gooding-Graf",gooding@zoology.ubc.ca,NA,FALSE,NA
 34,"Becca Kordas",kordas@zoology.ubc.ca,NA,FALSE,NA
 35,"Bep Schippers",beps@beatymuseum.ubc.ca,NA,TRUE,2011/01/19
 36,"Bill Harrower",NA,NA,FALSE,NA
@@ -56,7 +56,7 @@ ID,Printed.Name,Email,Start,Gone,Gone.Date
 57,"Dave Allen",NA,NA,FALSE,NA
 58,"David Smith",NA,NA,FALSE,NA
 59,"David Van Dyken",vandyken@zoology.ubc.ca,NA,FALSE,NA
-60,"Denis Tikhonenkov",NA,2012/06/12,FALSE,NA
+60,"Denis Tikhonenkov",NA,2012/06/12,TRUE,NA
 61,"Diana Rennison",NA,NA,FALSE,NA
 62,"Diane Srivastava",srivast@zoology.ubc.ca,NA,FALSE,NA
 63,"Dolph Schluter",NA,NA,FALSE,NA
@@ -263,3 +263,11 @@ ID,Printed.Name,Email,Start,Gone,Gone.Date
 274,"Michael Milillo",milillo@mail.ubc.ca,2013-Sep-25,FALSE,NA
 275,"Daan Van Stigt",NA,2013-Sep-25,FALSE,NA
 276,"Kaylee Byers",NA,2013-Sep-25,FALSE,NA
+277,"Mikey Kantor",NA,2013-Oct-9,FALSE,NA
+279,"Hamid Sad",NA,2013-Oct-29,FALSE,NA
+280,"Marina Giacomin",NA,2013-Oct-29,FALSE,NA
+282,"Matt Bayly",NA,2013-Oct-29,FALSE,NA
+283,"Chris Deeg",NA,2013-Oct-29,FALSE,NA
+284,"Jennifer Sunday",NA,2013-Oct-29,FALSE,NA
+285,"Seema Sheth",NA,2013-Dec-02,FALSE,NA
+286,"Amy Angert",NA,2013-Dec-02,FALSE,NA

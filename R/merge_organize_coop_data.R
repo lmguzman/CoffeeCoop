@@ -36,6 +36,11 @@ owing_total <- with(costnumbers,tapply(owing,ID,sum))
 
 debts <- data.frame(ID=names(owing_total),owing_total,stringsAsFactors=FALSE)
 
+# drunk_total <- with(costnumbers,tapply(Coffee,ID,sum))
+# drunk <- data.frame(ID=names(drunk_total),drunk_total,stringsAsFactors=FALSE)
+# drinkers <- merge(drunk,people,all=TRUE)
+# drinkers[order(drinkers$drunk_total),]
+
 ## now, how much did people pay?
 #head(payments)
 monies <- tapply(payments$Payment,payments$ID,sum)
@@ -45,7 +50,7 @@ monies_paid <- data.frame(ID=names(monies),monies,stringsAsFactors=FALSE)
 money <- merge(debts,monies_paid,all=TRUE)
 #str(money)
 ## has anyone paid but not used? vice versa?
-#sapply(money,function(x) table(is.na(x)))
+#colSums(is.na(money))
 
 ## in fact, these NAs are 0$
 money$monies[is.na(money$monies)] <- 0
