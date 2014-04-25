@@ -11,11 +11,16 @@
 
 ## all payments - consumption*cost_when_consumed + all goods - any cash payments to this person.
 
-## load libraries
-#library(data.table)
+
+# load libraries ----------------------------------------------------------
+
+library(dplyr)
 library(xtable)
 library(lubridate)
-## read data
+
+
+# read data ---------------------------------------------------------------
+
 consumption <- read.csv(file="../coffee_database/consumption.csv",stringsAsFactors=FALSE)
 payments <- read.csv(file="../coffee_database/payments.csv",stringsAsFactors=FALSE)
 info <- read.csv(file="../coffee_database/info.csv",stringsAsFactors=FALSE)
@@ -25,6 +30,9 @@ goods <- read.csv(file="../coffee_database/goods.csv",stringsAsFactors=FALSE)
 ## convert data columns to same formats
 consumption$data_date <- ymd(consumption$data_date)
 info$Date <- ymd(info$Date)
+
+
+
 ## First, We merge on date and calculate cost of coffee and milk
 costnumbers <- merge(consumption,info,by.x="data_date",by.y="Date")
 
