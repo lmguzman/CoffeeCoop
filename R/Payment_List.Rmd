@@ -2,10 +2,11 @@
 ```{r, echo=FALSE,message=FALSE,results='asis'}
 library(ggplot2)
 library(pander)
+library(knitr)
 source("merge_organize_coop_data.R")
 
 payment_list <- data.frame(Name=people$Printed.Name,ID=people$ID,Date="          ",amount="          ")
 
-pandoc.table(payment_list,style="grid")
+kable(payment_list)
 ```
 
