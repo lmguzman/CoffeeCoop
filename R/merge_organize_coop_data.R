@@ -13,7 +13,7 @@
 
 
 # load libraries ----------------------------------------------------------
-
+library(plyr)
 library(dplyr)
 library(xtable)
 library(lubridate)
@@ -28,27 +28,24 @@ people  <- read.csv(file="../coffee_database/people.csv",stringsAsFactors=FALSE)
 goods <- read.csv(file="../coffee_database/goods.csv",stringsAsFactors=FALSE)
 ## use Base functions
 ## convert data columns to same formats
-consumption$data_date <- ymd(consumption$data_date)
-info$Date <- ymd(info$Date)
+
+consumption <- mutate(consumption,Date=ymd(data_date))
+info <- mutate(info,Date=ymd(Date))
 
 
+# merge for calculating balances ------------------------------------------
 
 ## First, We merge on date and calculate cost of coffee and milk
-costnumbers <- merge(consumption,info,by.x="data_date",by.y="Date")
+costnumbers <- merge(consumption,info)
 
-costnumbers$owing <- with(costnumbers,CostBlack*Coffee+Milk*CostMilk)
+consumption <- tbl_df(consumption)
 
-owing_total <- with(costnumbers,tapply(owing,ID,sum))
-#library(plyr)
-#ddply(.data=costnumbers,.variables="ID",summarize,total=sum(owing))
-
-debts <- data.frame(ID=names(owing_total),owing_total,stringsAsFactors=FALSE)
-
-# drunk_total <- with(costnumbers,tapply(Coffee,ID,sum))
-# drunk <- data.frame(ID=names(drunk_total),drunk_total,stringsAsFactors=FALSE)
-# drinkers <- merge(drunk,people,all=TRUE)
-# drinkers[order(drinkers$drunk_total),]
-
+money_owed <- consumption %.%
+  left_join(info) %.%
+  mutate(owing=CostBlack*Coffee+Milk*CostMilk) %.%
+  group_by(ID)%.%
+  summarise(owing_total=sum(owing,na.rm=TRUE))
+  
 ## now, how much did people pay?
 #head(payments)
 monies <- tapply(payments$Payment,payments$ID,sum)
