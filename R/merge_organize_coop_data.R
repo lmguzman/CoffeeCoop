@@ -51,46 +51,35 @@ money_paid <- payments %.%
   group_by(ID) %.%
   summarize(paid_total=sum(Payment))
 
-
+goods_bought <- goods %.%
+  group_by(ID) %.%
+  summarize(GoodsCredit=sum(Cost))
+  
 ## combine please
-money <- merge(debts,monies_paid,all=TRUE)
-#str(money)
-## has anyone paid but not used? vice versa?
-#colSums(is.na(money))
 
-## in fact, these NAs are 0$
-money$monies[is.na(money$monies)] <- 0
-#money
-#str(money)
+### did anyone drink and *never* pay?
+anti_join(money_owed,money_paid) %.%
+  left_join(people)
 
-people_pay <- merge(money,people,by="ID",all.x=TRUE)
+### less problematically; did anyone pay but not drink?
+pay.not.drink <- anti_join(money_paid,money_owed) %.%
+  nrow()
 
-## how much total money has each person **purchased** for us?
-value_goods <- aggregate(x=goods["Cost"],by=goods["ID"],FUN=sum)
+if(pay.not.drink>0) stop(message("somebody paid but did not drink."))
 
-alldat <- merge(people_pay,value_goods,by="ID",all.x=TRUE,fill=0)
-alldat$Cost[is.na(alldat$Cost)] <- 0
-
-inter <- intersect(people$ID,money$ID)
-#people[!people$ID%in%inter,] ## these two have never taken anything from coop AND never paid
-
-#money[!money$ID%in%inter,]
-#inter[!inter%in%money$ID]
-#all(inter%in%money$ID)
-
-
-
-accounts <- data.frame(ID=alldat$ID,Name=alldat$Printed.Name,balance=alldat$monies-alldat$owing_total+alldat$Cost)
-accounts_pres <- accounts[!alldat$Gone,]
-accounts_alphabet <- accounts_pres[order(accounts_pres$Name),]
-
-
-## Zero balances for Sally
-accounts_alphabet[accounts_alphabet$ID==214,"balance"] <- 0
-
-## and for Andrew, Flo and Thor?
-accounts_alphabet[accounts_alphabet$ID%in%c(18),"balance"] <- 0
-
+## otherwise let's go ahead
+accounts <- left_join(money_owed,money_paid) %.%
+  left_join(people) %.%
+  filter(!Gone) %.%
+  ## some of the remaining (not gone people) have not paid  
+  mutate(paid_total_0=ifelse(is.na(paid_total),0,paid_total)) %.%
+  left_join(goods_bought) %.%
+  mutate(GoodsCredit_0=ifelse(is.na(GoodsCredit),0,GoodsCredit),
+         balance=GoodsCredit_0+paid_total_0-owing_total,
+         balance=ifelse(ID%in%c(18,214),0,balance)) %.%
+  select(ID,Printed.Name,balance) %.%
+  rename(c("Printed.Name"="Name")) %.%
+  arrange(Name)
 
 ## and here we can stop the filtering and merging.  accounts_alphabet contains all the info now.
 ##ls()[!ls()%in%"accounts_alphabet"]
