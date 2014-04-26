@@ -46,10 +46,11 @@ money_owed <- consumption %.%
   group_by(ID)%.%
   summarise(owing_total=sum(owing,na.rm=TRUE))
   
-## now, how much did people pay?
-#head(payments)
-monies <- tapply(payments$Payment,payments$ID,sum)
-monies_paid <- data.frame(ID=names(monies),monies,stringsAsFactors=FALSE)
+
+money_paid <- payments %.%
+  group_by(ID) %.%
+  summarize(paid_total=sum(Payment))
+
 
 ## combine please
 money <- merge(debts,monies_paid,all=TRUE)
