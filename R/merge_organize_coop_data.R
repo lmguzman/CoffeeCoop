@@ -36,8 +36,6 @@ info <- mutate(info,Date=ymd(Date))
 # merge for calculating balances ------------------------------------------
 
 ## First, We merge on date and calculate cost of coffee and milk
-costnumbers <- merge(consumption,info)
-
 consumption <- tbl_df(consumption)
 
 money_owed <- consumption %.%
@@ -84,3 +82,23 @@ accounts <- left_join(money_owed,money_paid) %.%
 ## and here we can stop the filtering and merging.  accounts_alphabet contains all the info now.
 ##ls()[!ls()%in%"accounts_alphabet"]
 ## we **COULD** remove all the other files but I don't want to.
+
+
+# check somebody's payment history ------------------------------------------------------
+
+people %.%
+  left_join(payments) %.%
+  filter(grepl("Andrew",Printed.Name))
+
+
+# check somebody's balance ------------------------------------------------
+
+filter(accounts,grepl("Amy",Name))
+
+
+# cumulative donation -----------------------------------------------------
+
+consumption %.%
+  left_join(info) %.%
+  filter(CostBlack==0.35) %.%
+  summarize(donation=sum(Coffee)*0.1)
