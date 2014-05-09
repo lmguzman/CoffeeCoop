@@ -26,7 +26,7 @@ Among users currently present in the building, **`r round(sum(accounts_alphabet$
 we drank `r with(subset(costnumbers,costnumbers$data_date==max(costnumbers$data_date)),sum(Milk))` milks, which altogether cost us `r with(subset(costnumbers,costnumbers$data_date==max(costnumbers$data_date)),sum(Milk*CostMilk))`.
 
 ```{r fig.cap="The distribution of balances"}
-dd <- with(density(accounts_alphabet$balance),data.frame(x,y))
+dd <- with(density(accounts$balance),data.frame(x,y))
 
 ggplot(data = dd, mapping = aes(x = x, y = y)) +
 geom_line(color="black") + geom_polygon(data = dd, aes(x=ifelse(x < 0,x,0), y=y))+scale_y_continuous(limits = c(0,max(dd$y)), name="Density") +
