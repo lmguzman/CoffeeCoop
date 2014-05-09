@@ -24,68 +24,7 @@ print(xtable(accounts_formatted,
       tabular.environment="longtable",hline.after=1:nrow(accounts_formatted),floating=FALSE,
       include.rownames=FALSE,add.to.row = list(pos = list(0),command = "\\hline \\endhead "),
       comment=FALSE)
-# 
-# 
-# ## make them data.tables
-# is.na(test$CostMilk)
-# consumption_dt <- data.table(consumption,key=c("data_date"))
-# info_dt <- data.table(info,key="Date")
-# 
-# cost_over_time <- consumption_dt[info_dt,list(ID,CoffeeCost=CostBlack*Coffee,CostMilk=Milk*CostMilk)]
-# 
-# setkey(cost_over_time,"ID")
-# 
-# all_consumption <- cost_over_time[,list(cost_consumed=sum(CoffeeCost+CostMilk,na.rm=TRUE)),by="ID"]
-# 
-# ## combine with payments
-# payments_dt <- data.table(payments,key="ID")
-# ## all payments ever
-# all_payments <- payments_dt[,list(paid=sum(Payment)),by=ID]
-# 
-# ## who are the people in the coop
-# people_dt <- data.table(people,key="ID")
-# 
-# ## who is here
-# present_people <- people_dt[!people_dt$Gone,list(ID,Printed.Name)]
-# 
-# coop_use <- merge(all_consumption,all_payments,all=TRUE)
-# 
-# accounts <- coop_use[present_people,list(ID,balance=paid-cost_consumed,Printed.Name)]
-# 
-# library(xtable)
-# write(print(xtable(accounts),type='html'),file="test.html")
-# 
-# print(xtable(accounts),type='latex')
 
-#library(pander)
-#write(print(pander(accounts)),file="testpander.md")
-
-#cheaters <- all_consumption[!all_payments]
-#setkey(cheaters,ID)
-# who are the cheaters?
-#people_dt[cheaters]
-
-#tables()
-# people_dt <- data.table(people,key="ID")
-# 
-# info_dt["2010-08-04"]
-# consumption_dt[info_dt]
-# 
-# consumption_dt[info_dt,CostBlack*Coffee+Tea*CostMilk]
-# 
-# 
-# pplmoney <- consumption_dt[info_dt,list(ID,CoffeeCost=CostBlack*Coffee,CostMilk=Tea*CostMilk)]
-# pplmoney[,list(sum(CoffeeCost),sum(CostMilk)),by=ID]
-# 
-# merge(consumption_dt,people_dt,by="ID")
-# 
-# consumption_dt[J(people$ID)]
-# 
-# consumption_dt[J("2013-04-22",221)]
-# 
-# 
-# consumption_dt[J("",221)]
-# consumption_dt[people]
 
 ## this ends with the data all nicely organized into a sheet showing Milk and Coffee consumption.
 ```
