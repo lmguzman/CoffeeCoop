@@ -3,19 +3,22 @@
 ```{r echo=FALSE,results='asis',message=FALSE}
 source("merge_organize_coop_data.R")
 ## convert numbers to text for formatting later
-accounts_active$balance_text <- sprintf("%.2f",accounts_active$balance)
 
+accounts_formatted <- accounts_active %.%
+  mutate(balance_text=sprintf("%.2f",balance),
+         balance_text_format=ifelse(balance<0,
+                                    paste0("\\textbf{",balance_text,"}"),
+                                    balance_text),
+         Name=ifelse(balance<0,
+                     paste0("\\textbf{",Name,"}"),
+                     Name)
+         ) %.%
+  cbind(data.frame(Coffee="",Milk="")) %.%
+  select(Name,balance_text_format,Coffee,Milk,ID) %.%
+  rename(c("balance_text_format"="balance",
+           "Coffee"="\\textbf{Coffee}",
+           "Milk"="\\textbf{Milk}"))
 
-out <- character()
-for(i in 1:nrow(accounts_active)){
-  if(accounts_active$balance[[i]]<0) 
-    out[i] <- paste("\\textbf{",accounts_active$balance_text[[i]],"}",sep="")
-  else
-    out[i] <- accounts_active$balance_text[[i]]
-}
-accounts_formatted <- cbind(accounts_active["Name"],balance=out,"","",accounts_active["ID"])
-
-names(accounts_formatted)[c(3,4)] <- c("\\textbf{Coffee}","\\textbf{Milk}")
 names(accounts_formatted) <- sprintf("\\Large %s",names(accounts_formatted))
 
 print(xtable(accounts_formatted,
