@@ -35,7 +35,7 @@ info <- mutate(info,Date=ymd(Date))
 ## did you update `info`?
 delay <- info$Date %.%
   max() %.%
-  difftime(today(),units="days")
+  difftime(max(consumption$Date),units="days")
 
 if(delay!=0) stop(message("did you update info?"))
 
