@@ -3,17 +3,17 @@
 ```{r echo=FALSE,results='asis',message=FALSE}
 source("merge_organize_coop_data.R")
 ## convert numbers to text for formatting later
-accounts_alphabet$balance_text <- sprintf("%.2f",accounts_alphabet$balance)
+accounts_active$balance_text <- sprintf("%.2f",accounts_active$balance)
 
 
 out <- character()
-for(i in 1:nrow(accounts_alphabet)){
-  if(accounts_alphabet$balance[[i]]<0) 
-    out[i] <- paste("\\textbf{",accounts_alphabet$balance_text[[i]],"}",sep="")
+for(i in 1:nrow(accounts_active)){
+  if(accounts_active$balance[[i]]<0) 
+    out[i] <- paste("\\textbf{",accounts_active$balance_text[[i]],"}",sep="")
   else
-    out[i] <- accounts_alphabet$balance_text[[i]]
+    out[i] <- accounts_active$balance_text[[i]]
 }
-accounts_formatted <- cbind(accounts_alphabet["Name"],balance=out,"","",accounts_alphabet["ID"])
+accounts_formatted <- cbind(accounts_active["Name"],balance=out,"","",accounts_active["ID"])
 
 names(accounts_formatted)[c(3,4)] <- c("\\textbf{Coffee}","\\textbf{Milk}")
 names(accounts_formatted) <- sprintf("\\Large %s",names(accounts_formatted))

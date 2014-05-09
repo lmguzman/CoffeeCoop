@@ -32,6 +32,12 @@ goods <- read.csv(file="../coffee_database/goods.csv",stringsAsFactors=FALSE)
 consumption <- mutate(consumption,Date=ymd(data_date))
 info <- mutate(info,Date=ymd(Date))
 
+## did you update `info`?
+delay <- info$Date %.%
+  max() %.%
+  difftime(today(),units="days")
+
+if(delay!=0) stop(message("did you update info?"))
 
 # merge for calculating balances ------------------------------------------
 
@@ -83,7 +89,23 @@ accounts <- left_join(money_owed,money_paid) %.%
 ##ls()[!ls()%in%"accounts_alphabet"]
 ## we **COULD** remove all the other files but I don't want to.
 
+## When did people last use the coop?
 
+active <- consumption %.%
+  select(ID,Date) %.%
+  group_by(ID) %.%
+  summarise(lastday_drank=max(Date)) %.%
+  filter(lastday_drank>(now()-dweeks(8))
+         )
+
+accounts_active <- semi_join(accounts,active) %.%
+  arrange(Name)
+
+accounts_passive <- anti_join(accounts,active) %.%
+  arrange(Name)
+## not run
+
+if(FALSE){
 # check somebody's payment history ------------------------------------------------------
 
 people %.%
@@ -102,3 +124,4 @@ consumption %.%
   left_join(info) %.%
   filter(CostBlack==0.35) %.%
   summarize(donation=sum(Coffee)*0.1)
+}
