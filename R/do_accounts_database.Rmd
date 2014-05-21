@@ -2,6 +2,7 @@
 
 ```{r echo=FALSE,results='asis',message=FALSE}
 source("merge_organize_coop_data.R")
+library(magrittr)
 ## convert numbers to text for formatting later
 
 accounts_formatted <- accounts_active %.%
@@ -15,9 +16,10 @@ accounts_formatted <- accounts_active %.%
          ) %.%
   cbind(data.frame(Coffee="",Milk="")) %.%
   select(Name,balance_text_format,Coffee,Milk,ID) %.%
-  rename(c("balance_text_format"="balance",
-           "Coffee"="\\textbf{Coffee}",
-           "Milk"="\\textbf{Milk}"))
+  set_names(c("Name","balance","\\textbf{Coffee}","\\textbf{Milk}","ID"))
+#   rename(c("balance_text_format"="balance",
+#            "Coffee"="\\textbf{Coffee}",
+#            "Milk"="\\textbf{Milk}"))
 
 names(accounts_formatted) <- sprintf("\\Large %s",names(accounts_formatted))
 
