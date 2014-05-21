@@ -63,3 +63,6 @@ data_date,ID,Item,Qty,Cost,purchase_date
 2014-May-05,219,milk,1,5.3,2014-Apr-25
 2014-May-05,221,milk,4,21,2014-Apr-30
 2014-May-05,221,sugar,4,20,2014-May-01
+2014-May-20,221,milk,1,4.6,2014-May-07
+2014-May-20,221,milk,4,21.2,2014-May-12
+2014-May-20,221,milk,3,15.9,2014-May-15

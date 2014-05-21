@@ -106,7 +106,7 @@ ID,Printed.Name,Email,Start,Gone,Gone.Date
 254,"Jeff R. Werner",werner@zoology.ubc.ca,2012/09/19,FALSE,NA
 109,"Jeff Werner",jeff@jeffwerner.ca,NA,TRUE,2011/07/15
 110,"Jennifer Guevara",guevara@zoology.ubc.ca,NA,FALSE,NA
-111,"Jennifer Ruskey",NA,2012/11/28,FALSE,NA
+111,"Jennifer Ruskey",NA,2012/11/28,TRUE,NA
 112,"Jennifer Wirth",NA,2012/04/13,FALSE,NA
 113,"Jenn Jorve",jorve@zoology.ubc.ca,NA,TRUE,NA
 114,"Jeremy Draghi",NA,2012/09/19,FALSE,NA
@@ -279,3 +279,9 @@ ID,Printed.Name,Email,Start,Gone,Gone.Date
 292,"Robin Elahi",NA,2014-May-6,FALSE,NA
 293,"Paul Bucci",NA,2014-May-6,FALSE,NA
 294,"Paulo Segre",NA,2014-May-6,FALSE,NA
+295,"Kristina Ulrich",NA,2014-May-20,FALSE,NA
+296,"Ada Roman",NA,2014-May-20,FALSE,NA
+297,"Melissa Guzman",NA,2014-May-20,FALSE,NA
+298,"Doug Altshuler",NA,2014-May-20,FALSE,NA
+299,"Pamela Pan",NA,2014-May-20,FALSE,NA
+300,"Robert Vandervelde",NA,2014-May-20,FALSE,NA
