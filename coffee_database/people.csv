@@ -56,7 +56,7 @@ ID,Printed.Name,Email,Start,Gone,Gone.Date
 57,"Dave Allen",NA,NA,FALSE,NA
 58,"David Smith",NA,NA,FALSE,NA
 59,"David Van Dyken",vandyken@zoology.ubc.ca,NA,FALSE,NA
-60,"Denis Tikhonenkov",NA,2012/06/12,TRUE,NA
+60,"Denis Tikhonenkov",NA,2012/06/12,FALSE,NA
 61,"Diana Rennison",NA,NA,FALSE,NA
 62,"Diane Srivastava",srivast@zoology.ubc.ca,NA,FALSE,NA
 63,"Dolph Schluter",NA,NA,FALSE,NA
@@ -97,7 +97,7 @@ ID,Printed.Name,Email,Start,Gone,Gone.Date
 250,"Isabel Marques",NA,2013/04/22,FALSE,NA
 99,"Itay Mayrose",itaymay@gmail.com,2012/11/28,TRUE,2011/09/22
 100,"Jamie Leathem",NA,NA,FALSE,NA
-102,"Jana Petermann",petermann@zoology.ubc.ca,2012/09/19,TRUE,2011/12/06
+102,"Jana Petermann",petermann@zoology.ubc.ca,2012/09/19,FALSE,2011/12/06
 105,"Janet MacLean",NA,2012/11/28,TRUE,NA
 103,"Jan Finke",NA,2012/06/12,FALSE,NA
 106,"Jan Janouskovec",NA,2012/11/28,FALSE,NA
@@ -240,7 +240,7 @@ ID,Printed.Name,Email,Start,Gone,Gone.Date
 240,"Thor Veen",NA,NA,FALSE,NA
 241,"Thuy Nguyen",NA,NA,FALSE,NA
 242,"Travis Ingram",ingram@zoology.ubc.ca,NA,TRUE,2011/09/22
-243,"Vinnie Farjalla",vinicius.farjalla@gmail.com,NA,TRUE,2011/02/23
+243,"Vinicius Farjalla",vinicius.farjalla@gmail.com,NA,FALSE,2011/02/23
 244,"Virginia Noble",NA,NA,FALSE,NA
 245,"Wes Wenhardt",wenhardt@ubc.ca,NA,TRUE,2011/07/15
 246,"William Mountbatten",NA,2012/09/19,FALSE,NA
@@ -286,4 +286,6 @@ ID,Printed.Name,Email,Start,Gone,Gone.Date
 299,"Pamela Pan",NA,2014-May-20,FALSE,NA
 300,"Robert Vandervelde",NA,2014-May-20,FALSE,NA
 301,"Ildiko Szalo",NA,2014-June-17,FALSE,NA
-302,"Alexander Thillrenana",NA,2014-June-17,FALSE,NA
+302,"Alexander Thielemann",NA,2014-June-17,FALSE,NA
+303,"Hugo Rody",NA,2014-June-17,FALSE,NA
+304,"Katie Beall",NA,2014-June-17,FALSE,NA
