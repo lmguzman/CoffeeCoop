@@ -1,0 +1,65 @@
+---
+title: "debtors_over_time"
+author: "Andrew MacDonald"
+date: '2014-05-19'
+output: html_document
+---
+
+Coffee co-op debt over time
+
+```{r start, echo=FALSE,message=FALSE}
+library(ggplot2)
+library(dplyr)
+library(magrittr)
+source("merge_organize_coop_data.R")
+```
+
+```{r foo, echo=FALSE,message=FALSE}
+
+debt <- consumption %.%
+  left_join(info) %.%
+  mutate(owing=CostBlack*Coffee+Milk*CostMilk) %.%
+  select(ID,Date,owing)
+
+paid  <- payments %.%
+  mutate(Date=ymd(data_date)) %.% 
+  select(Date,ID,Payment) %.% 
+  left_join(goods) %.%
+  mutate(Payment_0=ifelse(is.na(Payment),0,Payment),
+         Cost_0=ifelse(is.na(Cost),0,Cost),
+         moneyIn=Cost_0+Payment_0,
+         moneyIn=ifelse(ID%in%c(18,214),0,moneyIn)) %>%
+  filter(moneyIn>0) %>% #negative numbers usually indicate that I gave somebody cash
+  filter(!ID%in%c(18,214,221,125)) %>% #Andrew and Sally
+  select(ID,moneyIn,Date)
+
+# paid %>%
+#   group_by(Date) %>% arrange(moneyIn %>% desc) %>% 
+#   summarize(Money=sum(moneyIn)) %>%
+#   mutate(Money_Time=cumsum(Money)) %>%
+#   ggplot(aes(x=Date,y=Money_Time))+geom_line()+ylab("Money paid to co-op over time") 
+# 
+# ggsave("money_time.png")
+#   
+
+left_join(debt,paid) %.% 
+  tbl_df() %.%
+  mutate(moneyIn=ifelse(is.na(moneyIn),0,moneyIn),
+         owing=ifelse(is.na(owing),0,owing)
+         ) %.% 
+  group_by(Date,ID) %>% 
+  summarize(owe=sum(owing),
+            pay=sum(moneyIn)
+            ) %.%
+  mutate(balance=pay-owe) %.%
+  summarise(total_ppl=n(),
+            total_debtors=sum(balance<0)
+            ) %.%
+  #ggplot(aes(x=Date,y=total_ppl))+geom_line() + geom_line(aes(y=total_debtors))
+  mutate(prop_debtors=total_debtors/total_ppl) %.%
+  filter(prop_debtors>0.2&prop_debtors<0.9) %>%
+  ggplot(aes(x=Date,y=prop_debtors))+geom_line()+stat_smooth(method = "loess",span=0.9)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
