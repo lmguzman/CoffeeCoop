@@ -1,0 +1,23 @@
+## payment data
+
+Date: 
+
+```{r message=FALSE,echo=FALSE,results='asis'}
+library(dplyr)
+library(xtable)
+people <- read.csv(file="../coffee_database/people.csv",stringsAsFactors=FALSE)
+
+people %>%
+  select(Printed.Name,ID) %>%
+  mutate(Amount="") %>%
+  write.csv(file="PaymentDatasheet.csv",row.names=FALSE)
+  
+
+#   xtable() %>%
+#   print(type='latex',sanitize.text.function=identity,floating=FALSE,
+#         hline.after=1:nrow(people),
+#         include.rownames=FALSE,
+#         comment=FALSE)
+      
+```
+
