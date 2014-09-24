@@ -2,3 +2,8 @@
 .Rhistory
 .RData
 #process-new.R#
+
+*.Rproj
+
+*.dropbox
+.dropbox
