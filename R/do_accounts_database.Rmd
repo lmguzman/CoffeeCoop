@@ -1,8 +1,7 @@
 
-
 ```{r echo=FALSE,results='asis',message=FALSE}
 source("merge_organize_coop_data.R")
-library(magrittr)
+
 ## convert numbers to text for formatting later
 
 accounts_formatted <- accounts_active %.%
@@ -21,8 +20,10 @@ accounts_formatted <- accounts_active %.%
 #            "Coffee"="\\textbf{Coffee}",
 #            "Milk"="\\textbf{Milk}"))
 
-names(accounts_formatted) <- sprintf("\\Large %s",names(accounts_formatted))
+#names(accounts_formatted) <- sprintf("\\Large %s",names(accounts_formatted))
 
+# library(pander)
+# pander(accounts_formatted)
 print(xtable(accounts_formatted,
              align=c("|","l","|","p{5cm}","|","r","|","p{9cm}","|","p{6cm}","|","l","|")),
       type='latex',sanitize.text.function=identity,
