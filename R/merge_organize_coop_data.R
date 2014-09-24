@@ -126,18 +126,18 @@ if(FALSE){
 
 people %.%
   left_join(payments) %.%
-  filter(grepl("Kley",Printed.Name))
+  filter(grepl("O'",Printed.Name))
 
 
 # check consumption history -----------------------------------------------
 
 people %.%
   left_join(consumption) %.%
-  filter(grepl("Kley",Printed.Name))
+  filter(grepl("O'",Printed.Name))
 
 # check somebody's balance ------------------------------------------------
 
-filter(accounts,grepl("Kley",Name))
+filter(accounts,grepl("Burk",Name))
 
 
 # cumulative donation -----------------------------------------------------
