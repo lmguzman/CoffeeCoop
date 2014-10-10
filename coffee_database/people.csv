@@ -197,7 +197,7 @@ ID,Printed.Name,Email,Start,Gone,Gone.Date
 197,"Reme Beyers",NA,NA,FALSE,NA
 198,"Rich FitzJohn",fitzjohn@zoology.ubc.ca,NA,TRUE,2012/08/01
 199,"Rick Taylor",etaylor@zoology.ubc.ca,NA,FALSE,NA
-200,"Robert Colautti",NA,2012/07/19,FALSE,NA
+200,"Robert Colautti",NA,2012/07/19,TRUE,NA
 201,"Robin LeCraw",lecraw@zoology.ubc.ca,NA,FALSE,NA
 202,"Rose Andrew",roseandr@interchange.ubc.ca,NA,FALSE,NA
 203,"Ross Whippo",NA,NA,FALSE,NA
@@ -215,7 +215,7 @@ ID,Printed.Name,Email,Start,Gone,Gone.Date
 215,"Sam Yeaman",NA,NA,FALSE,NA
 216,"Santiago David",NA,2013/01/28,FALSE,NA
 217,"Sarah Amundrud",NA,2012/09/19,FALSE,NA
-218,"Sarah Yakimowski",NA,2013/01/28,FALSE,NA
+218,"Sarah Yakimowski",NA,2013/01/28,TRUE,NA
 219,"Sara Miller",NA,NA,FALSE,NA
 220,"Scott Donker",NA,NA,TRUE,2012/04/13
 221,"S\'ebastien Renaut",NA,NA,FALSE,NA
@@ -289,3 +289,14 @@ ID,Printed.Name,Email,Start,Gone,Gone.Date
 302,"Alexander Thielemann",NA,2014-June-17,FALSE,NA
 303,"Hugo Rody",NA,2014-June-17,FALSE,NA
 304,"Katie Beall",NA,2014-June-17,FALSE,NA
+305,"R\'emi Matthey-Doret",NA,2014-Oct-10,FALSE,NA
+306,"Clare Cullen",NA,2014-Oct-10,FALSE,NA
+307,"Nathaniel Sharp",NA,2014-Oct-10,FALSE,NA
+308,"Alvin Tian (sp?)",NA,2014-Oct-10,FALSE,NA
+309,"Mark Robertson",NA,2014-Oct-10,FALSE,NA
+310,"Andy Louden",NA,2014-Oct-10,FALSE,NA
+311,"Coreen Forbes",NA,2014-Oct-10,FALSE,NA
+312,"Jenn Sunday",NA,2014-Oct-10,FALSE,NA
+313,"Silu Wang",NA,2014-Oct-10,FALSE,NA
+314,"Cheng Chen",NA,2014-Oct-10,FALSE,NA
+315,"Andy Leblanc",NA,2014-Oct-10,FALSE,NA
