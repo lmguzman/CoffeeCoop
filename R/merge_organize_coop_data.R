@@ -34,8 +34,8 @@ consumption <- mutate(consumption,Date=ymd(data_date))
 info <- mutate(info,Date=ymd(Date))
 
 ## did you update `info`?
-delay <- info$Date %.%
-  max() %.%
+delay <- info$Date %>%
+  max() %>%
   difftime(max(consumption$Date),units="days")
 
 if(delay!=0) stop(message("did you update info?"))
@@ -45,47 +45,47 @@ if(delay!=0) stop(message("did you update info?"))
 ## First, We merge on date and calculate cost of coffee and milk
 consumption <- tbl_df(consumption)
 
-money_owed <- consumption %.%
-  left_join(info) %.%
-  mutate(owing=CostBlack*Coffee+Milk*CostMilk) %.%
-  group_by(ID) %.% 
+money_owed <- consumption %>%
+  left_join(info) %>%
+  mutate(owing=CostBlack*Coffee+Milk*CostMilk) %>%
+  group_by(ID) %>% 
   summarise(owing_total=sum(owing,na.rm=TRUE))
   
 
-money_paid <- payments %.%
-  group_by(ID) %.%
+money_paid <- payments %>%
+  group_by(ID) %>%
   summarize(paid_total=sum(Payment))
 
-goods_bought <- goods %.%
-  group_by(ID) %.%
+goods_bought <- goods %>%
+  group_by(ID) %>%
   summarize(GoodsCredit=sum(Cost)) 
   
 ## combine please
 
 ### did anyone drink and *never* pay?
-# anti_join(money_owed,money_paid) %.%
+# anti_join(money_owed,money_paid) %>%
 #   left_join(people)
 
 ### less problematically; did anyone pay but not drink?
-pay.not.drink <- anti_join(money_paid,money_owed) %.%
+pay.not.drink <- anti_join(money_paid,money_owed) %>%
   nrow()
 
-if(pay.not.drink>0) print(message("somebody paid but did not drink."))
+# if(pay.not.drink>0) print(message("somebody paid but did not drink."))
 
 ## otherwise let's go ahead
-accounts <- left_join(money_owed,money_paid) %.%
+accounts <- left_join(money_owed,money_paid) %>%
   rbind_list(anti_join(money_paid,money_owed)) %>%
-  left_join(people) %.% 
-  filter(!Gone) %.%
+  left_join(people) %>% 
+  filter(!Gone) %>%
   ## some of the remaining (not gone people) have not paid  
-  mutate(paid_total_0=ifelse(is.na(paid_total),0,paid_total)) %.%
-  left_join(goods_bought) %.% 
+  mutate(paid_total_0=ifelse(is.na(paid_total),0,paid_total)) %>%
+  left_join(goods_bought) %>% 
   mutate(GoodsCredit_0=ifelse(is.na(GoodsCredit),0,GoodsCredit),
          owing_total_0=ifelse(is.na(owing_total),0,owing_total),
          balance=GoodsCredit_0+paid_total_0-owing_total_0,
-         balance=ifelse(ID%in%c(18,214),0,balance)) %.%
-  select(ID,Printed.Name,balance) %.% 
-  mutate(Name=Printed.Name) %.% 
+         balance=ifelse(ID%in%c(18,214),0,balance)) %>%
+  select(ID,Printed.Name,balance) %>% 
+  mutate(Name=Printed.Name) %>% 
   arrange(Name)
 
 ## and here we can stop the filtering and merging.  accounts_alphabet contains all the info now.
@@ -94,19 +94,19 @@ accounts <- left_join(money_owed,money_paid) %.%
 
 ## When did people last use the coop?
 
-active_drink <- consumption %.%
-  select(ID,Date) %.%
-  group_by(ID) %.%
-  summarise(lastday=max(Date)) %.%
+active_drink <- consumption %>%
+  select(ID,Date) %>%
+  group_by(ID) %>%
+  summarise(lastday=max(Date)) %>%
   filter(lastday>(now()-dweeks(8))
   )
 
 
-active_money <- payments %.%
+active_money <- payments %>%
   mutate(Date=ymd(data_date)) %>%
-  select(ID,Date,data_date) %.% #filter(is.na(Date))
-  group_by(ID) %.%
-  summarise(lastday=max(Date)) %.%
+  select(ID,Date,data_date) %>% #filter(is.na(Date))
+  group_by(ID) %>%
+  summarise(lastday=max(Date)) %>%
   filter(lastday > (now() %>% subtract(dweeks(8)))
   )
 
@@ -114,25 +114,25 @@ active <- rbind(active_drink,active_money) %>%
   select(ID) %>%
   unique
 
-accounts_active <- semi_join(accounts,active) %.%
+accounts_active <- semi_join(accounts,active) %>%
   arrange(Name)
 
-accounts_passive <- anti_join(accounts,active) %.%
+accounts_passive <- anti_join(accounts,active) %>%
   arrange(Name)
 ## not run
 
 if(FALSE){
 # check somebody's payment history ------------------------------------------------------
 
-people %.%
-  left_join(payments) %.%
+people %>%
+  left_join(payments) %>%
   filter(grepl("O'",Printed.Name))
 
 
 # check consumption history -----------------------------------------------
 
-people %.%
-  left_join(consumption) %.%
+people %>%
+  left_join(consumption) %>%
   filter(grepl("O'",Printed.Name))
 
 # check somebody's balance ------------------------------------------------
@@ -142,8 +142,8 @@ filter(accounts,grepl("Burk",Name))
 
 # cumulative donation -----------------------------------------------------
 
-consumption %.%
-  left_join(info) %.%
-  filter(CostBlack==0.35) %.%
+consumption %>%
+  left_join(info) %>%
+  filter(CostBlack==0.35) %>%
   summarize(donation=sum(Coffee)*0.1)
 }
