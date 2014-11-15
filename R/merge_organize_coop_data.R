@@ -119,6 +119,10 @@ accounts_active <- semi_join(accounts,active) %>%
 
 accounts_passive <- anti_join(accounts,active) %>%
   arrange(Name)
+
+## Write out active accounts
+write.csv(accounts_active, "../SignupSheet/accounts_active.csv", row.names = FALSE)
+
 ## not run
 
 if(FALSE){
