@@ -1,5 +1,5 @@
 ## Read in a datasheet of the active co-op users
-accounts_active <- read.csv("../SignupSheet/accounts_active.csv")
+accounts_active <- read.csv("../SignupSheet/accounts_active.csv", stringsAsFactors = FALSE)
 
 library(dplyr)
 library(xtable)
@@ -8,14 +8,13 @@ library(magrittr)
 ## convert numbers to text for formatting later
 
 accounts_formatted <- accounts_active %>%
-  mutate(balance_text=sprintf("%.2f",balance),
+  mutate(balance_text=sprintf("%.2f", balance),
          balance_text_format=ifelse(balance<0,
                                     paste0("\\textbf{",balance_text,"}"),
                                     balance_text),
          Name=ifelse(balance<0,
                      paste0("\\textbf{",Name,"}"),
-                     Name)
-  ) %>%
+                     Name)) %>%
   cbind(data.frame(Coffee="",Milk="")) %>%
   select(Name,balance_text_format,Coffee,Milk,ID) %>%
   set_names(c("Name","balance","\\textbf{Coffee}","\\textbf{Milk}","ID"))
