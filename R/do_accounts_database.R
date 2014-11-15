@@ -1,3 +1,4 @@
+## Read in a datasheet of the active co-op users
 accounts_active <- read.csv("../SignupSheet/accounts_active.csv")
 
 ## convert numbers to text for formatting later
