@@ -4,6 +4,7 @@
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \usepackage{longtable}
+\usepackage[table]{xcolor}
 %\usepackage{array}
 %\usepackage[landscape]{geometry}
 \usepackage[landscape,left=2cm,top=2cm,right=2cm,nohead,nofoot]{geometry}
@@ -147,6 +148,8 @@ $endif$
 $if(title)$
 \maketitle
 $endif$
+
+\rowcolors{1}{gray!25}{white}
 
 $for(include-before)$
 $include-before$

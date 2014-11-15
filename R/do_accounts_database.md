@@ -1,4 +1,7 @@
-#Coffee Co-op signup sheet for 10 October, 2014
+---
+output: pdf_document
+---
+#Coffee Co-op signup sheet for 14 November, 2014
 
 Please bring your money to Andrew in room 203. Mark your coffee and milk separately.  Mark each **shot of espresso**, not each beverage.  Enjoy!
 
@@ -7,8 +10,6 @@ Please bring your money to Andrew in room 203. Mark your coffee and milk separat
   \hline \endhead Ada Roman & 19.55 &  &  & 296 \\ 
    \hline
 Alathea LeTaw & 0.00 &  &  &   6 \\ 
-   \hline
-\textbf{Alexander Thielemann} & \textbf{-0.85} &  &  & 302 \\ 
    \hline
 Alistair Blachford & 30.55 &  &  &  10 \\ 
    \hline
@@ -24,8 +25,6 @@ Andy Louden & 25.70 &  &  & 310 \\
    \hline
 Ang\'elica Gonz\'alez & 6.80 &  &  &  19 \\ 
    \hline
-Angie Nicolas & 2.15 &  &  &  20 \\ 
-   \hline
 Armando Geraldes & 7.05 &  &  &  28 \\ 
    \hline
 Bill Harrower & 11.35 &  &  &  36 \\ 
@@ -36,19 +35,13 @@ Carl Rothfels & 18.75 &  &  &  44 \\
    \hline
 \textbf{Catherine Hoffman} & \textbf{-1.90} &  &  &  46 \\ 
    \hline
-Charles Hefer & 7.90 &  &  &  47 \\ 
-   \hline
 Cheng Chen & 6.90 &  &  & 314 \\ 
    \hline
 Chris Deeg & 25.43 &  &  & 283 \\ 
    \hline
 \textbf{Chris Grassa} & \textbf{-7.75} &  &  &  49 \\ 
    \hline
-Chris Harley & 4.00 &  &  &  50 \\ 
-   \hline
 Chris Muir & 7.90 &  &  & 269 \\ 
-   \hline
-Christine Grossen & 18.40 &  &  &  52 \\ 
    \hline
 Clare Cullen & 6.50 &  &  & 306 \\ 
    \hline
@@ -59,10 +52,6 @@ Denis Tikhonenkov & 7.95 &  &  &  60 \\
 Diane Srivastava & 30.48 &  &  &  62 \\ 
    \hline
 Dolph Schluter & 15.50 &  &  &  63 \\ 
-   \hline
-Doug Altshuler & 17.30 &  &  & 298 \\ 
-   \hline
-Edy Piascik & 8.40 &  &  &  67 \\ 
    \hline
 Elisabeth Hehenberger & 26.80 &  &  &  69 \\ 
    \hline
@@ -76,11 +65,7 @@ Genevieve Leduc-Robert & 13.55 &  &  &  79 \\
    \hline
 Greg Baute & 3.80 &  &  &  84 \\ 
    \hline
-Gregory Crutsinger & 3.45 &  &  &  86 \\ 
-   \hline
 \textbf{Gwylim Blackburn} & \textbf{-23.30} &  &  &  89 \\ 
-   \hline
-Gyan Harwood & 1.40 &  &  &  90 \\ 
    \hline
 Hugo Rody & 15.90 &  &  & 303 \\ 
    \hline
@@ -100,11 +85,7 @@ Javier Del campo & 5.70 &  &  & 258 \\
    \hline
 \textbf{Jennifer Sunday} & \textbf{-2.40} &  &  & 284 \\ 
    \hline
-Ji Yang & 2.75 &  &  & 117 \\ 
-   \hline
 \textbf{Joey Bernhardt} & \textbf{-13.60} &  &  & 119 \\ 
-   \hline
-Juan Santos & 1.90 &  &  & 123 \\ 
    \hline
 \textbf{Julia Gustavsen} & \textbf{-7.45} &  &  & 124 \\ 
    \hline
@@ -113,8 +94,6 @@ Julian Heavyside & 27.23 &  &  & 125 \\
 \textbf{Kat Anderson} & \textbf{-5.10} &  &  & 127 \\ 
    \hline
 Kathryn Turner & 8.40 &  &  & 130 \\ 
-   \hline
-Katie Beall & 7.90 &  &  & 304 \\ 
    \hline
 Katie Marshall & 19.40 &  &  & 267 \\ 
    \hline
@@ -128,13 +107,9 @@ Kira Delmore & 16.40 &  &  & 137 \\
    \hline
 \textbf{Kristina Ulrich} & \textbf{-2.55} &  &  & 295 \\ 
    \hline
-Kurt Trzcinski & 3.95 &  &  & 257 \\ 
-   \hline
 \textbf{Lesha Koop} & \textbf{-1.00} &  &  & 142 \\ 
    \hline
 Loren Rieseberg & 34.15 &  &  & 147 \\ 
-   \hline
-\textbf{Marco Todesco} & \textbf{-6.50} &  &  & 149 \\ 
    \hline
 Mark Robertson & 8.10 &  &  & 309 \\ 
    \hline
@@ -178,8 +153,6 @@ Naomi Fast & 6.95 &  &  & 176 \\
    \hline
 Nathaniel Sharp & 24.30 &  &  & 307 \\ 
    \hline
-Navdeep Gill & 14.05 &  &  & 178 \\ 
-   \hline
 Noriko Okamoto & 2.80 &  &  & 184 \\ 
    \hline
 Paul Bucci & 6.90 &  &  & 293 \\ 
@@ -202,25 +175,17 @@ Robert Vandervelde & 0.00 &  &  & 300 \\
    \hline
 \textbf{S\'ebastien Renaut} & \textbf{-0.76} &  &  & 221 \\ 
    \hline
-Saemi Sveinsson & 12.20 &  &  & 212 \\ 
-   \hline
 Sally Otto & 0.00 &  &  & 214 \\ 
    \hline
 Sam Evans & 9.01 &  &  & 289 \\ 
    \hline
-Santiago David & 9.40 &  &  & 216 \\ 
-   \hline
 \textbf{Sara Miller} & \textbf{-13.26} &  &  & 219 \\ 
-   \hline
-Seema Sheth & 6.65 &  &  & 285 \\ 
    \hline
 Sheila Byers & 3.70 &  &  & 259 \\ 
    \hline
 \textbf{Silu Wang} & \textbf{-5.35} &  &  & 313 \\ 
    \hline
 \textbf{Thierry Heger} & \textbf{-6.45} &  &  & 239 \\ 
-   \hline
-\textbf{Thor Veen} & \textbf{-0.45} &  &  & 240 \\ 
    \hline
 Vinicius Farjalla & 18.20 &  &  & 243 \\ 
    \hline
