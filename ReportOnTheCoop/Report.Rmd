@@ -8,9 +8,15 @@ output: pdf_document
 ```{r echo=FALSE,message=FALSE}
 library(knitr)
 library(ggplot2)
+library(lubridate)
 opts_chunk$set(message=FALSE,warning=FALSE,echo=FALSE,dev="pdf")
 
+info <- read.csv("../coffee_database/info.csv", stringsAsFactors = FALSE)
+consumption <- read.csv("../coffee_database/consumption.csv", stringsAsFactors = FALSE)
+accounts <- read.csv("../SignupSheet/accounts_active.csv", stringsAsFactors = FALSE)
 
+info$Date <- ymd(info$Date)
+consumption$data_date <- ymd(consumption$data_date)
 ```
 
 # Report on the state of the Coffee Co-op
@@ -23,12 +29,12 @@ marked_coffees <- sum(consumption[which(consumption$data_date==max(info$Date)),"
 It has been `r since_last[[1]]` days since our sheet was updated. In that time we drank **`r consumed_coffees` coffees**, of which **`r marked_coffees`** were marked down; making our honesty during this period **`r round(100*marked_coffees/consumed_coffees)`%**
 
 ## The distribution of co-op balances:
-Among users currently present in the building, **`r round(sum(accounts_alphabet$balance<0)/nrow(accounts_alphabet)*100)`%** owe the co-op money, representing a total debt of **`r sum(accounts_alphabet$balance[accounts_alphabet$balance<0],na.rm=TRUE)`**. If we consider all users **EVER** in the co-op, the total debt is **`r sum(accounts_pres$balance[accounts_pres$balance<0],na.rm=TRUE)`**.
+Among users currently present in the building, **`r round(sum(accounts$balance<0)/nrow(accounts)*100)`%** owe the co-op money, representing a total debt of **`r sum(accounts$balance[accounts$balance<0],na.rm=TRUE)`**.
 
 **Please come and pay Andrew MacDonald (203).  Let's try to improve these numbers!**
 
 ## milk consumption
-we drank `r with(subset(costnumbers,costnumbers$data_date==max(costnumbers$data_date)),sum(Milk))` milks, which altogether cost us `r with(subset(costnumbers,costnumbers$data_date==max(costnumbers$data_date)),sum(Milk*CostMilk))`.
+
 
 ```{r fig.cap="The distribution of balances"}
 dd <- with(density(accounts$balance),data.frame(x,y))
