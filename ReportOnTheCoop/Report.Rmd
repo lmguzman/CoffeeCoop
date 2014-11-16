@@ -1,0 +1,40 @@
+---
+title: "Report on the Coffee Co-op"
+author: "Andrew MacDonald"
+date: '2014-11-15'
+output: pdf_document
+---
+
+```{r echo=FALSE,message=FALSE}
+library(knitr)
+library(ggplot2)
+opts_chunk$set(message=FALSE,warning=FALSE,echo=FALSE,dev="pdf")
+
+
+```
+
+# Report on the state of the Coffee Co-op
+```{r}
+since_last <- difftime(info$Date[length(info$Date)],info$Date[length(info$Date)-1],units="days")
+consumed_coffees <- info$Count[length(info$Count)]-info$Count[length(info$Count)-1]
+marked_coffees <- sum(consumption[which(consumption$data_date==max(info$Date)),"Coffee"])
+```
+
+It has been `r since_last[[1]]` days since our sheet was updated. In that time we drank **`r consumed_coffees` coffees**, of which **`r marked_coffees`** were marked down; making our honesty during this period **`r round(100*marked_coffees/consumed_coffees)`%**
+
+## The distribution of co-op balances:
+Among users currently present in the building, **`r round(sum(accounts_alphabet$balance<0)/nrow(accounts_alphabet)*100)`%** owe the co-op money, representing a total debt of **`r sum(accounts_alphabet$balance[accounts_alphabet$balance<0],na.rm=TRUE)`**. If we consider all users **EVER** in the co-op, the total debt is **`r sum(accounts_pres$balance[accounts_pres$balance<0],na.rm=TRUE)`**.
+
+**Please come and pay Andrew MacDonald (203).  Let's try to improve these numbers!**
+
+## milk consumption
+we drank `r with(subset(costnumbers,costnumbers$data_date==max(costnumbers$data_date)),sum(Milk))` milks, which altogether cost us `r with(subset(costnumbers,costnumbers$data_date==max(costnumbers$data_date)),sum(Milk*CostMilk))`.
+
+```{r fig.cap="The distribution of balances"}
+dd <- with(density(accounts$balance),data.frame(x,y))
+
+ggplot(data = dd, mapping = aes(x = x, y = y)) +
+geom_line(color="black") + geom_polygon(data = dd, aes(x=ifelse(x < 0,x,0), y=y))+scale_y_continuous(limits = c(0,max(dd$y)), name="Density") +
+scale_x_continuous(name="Balance ($)")
+
+```
