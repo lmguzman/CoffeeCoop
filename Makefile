@@ -14,5 +14,8 @@ SignupSheet/Signup.md: SignupSheet/signuptable.tex SignupSheet/signuptable.md
 SignupSheet/Signup.pdf: SignupSheet/Signup.md SignupSheet/tabletemplate.tex
 	cd $(<D); pandoc --template=tabletemplate.tex $(<F) --latex-engine=xelatex --variable fontsize=12pt -o $(@F)
 
-PaymentSheet/payment.pdf: PaymentSheet/payment.Rmd PaymentSheet/longtablepreamble.tex
-	cd $(<D); Rscript -e "rmarkdown::render('$(@F)', output_format = 'pdf_document')"
+PaymentSheet/payment.pdf: PaymentSheet/payment.Rmd PaymentSheet/longtablepreamble.tex PaymentSheet/payment.R
+	cd $(<D); Rscript payment.R
+
+clean: 
+	rm SignupSheet/signuptable.* SignupSheet/Signup.md
