@@ -18,4 +18,4 @@ PaymentSheet/payment.pdf: PaymentSheet/payment.Rmd PaymentSheet/longtablepreambl
 	cd $(<D); Rscript payment.R
 
 clean: 
-	rm SignupSheet/signuptable.* SignupSheet/Signup.md
+	rm SignupSheet/signuptable.tex SignupSheet/Signup.md
