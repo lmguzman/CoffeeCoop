@@ -35,16 +35,18 @@ do_accounts <- function(.money_owed, .money_paid, .people, .goods_bought){
     ## some of the remaining (not gone people) have not paid  
     mutate(paid_total_0 = ifelse(is.na(paid_total), 0, paid_total)) %>%
     left_join(.goods_bought) %>% 
-    mutate(GoodsCredit_0=ifelse(is.na(GoodsCredit),0,GoodsCredit),
-           owing_total_0=ifelse(is.na(owing_total),0,owing_total),
-           balance=GoodsCredit_0+paid_total_0-owing_total_0,
-           balance=ifelse(ID%in%c(18,214),0,balance)) %>%
-    select(ID,Printed.Name,balance) %>% 
-    mutate(Name=Printed.Name) %>% 
+    mutate(GoodsCredit_0 = ifelse(is.na(GoodsCredit), 0, GoodsCredit),
+           owing_total_0 = ifelse(is.na(owing_total), 0, owing_total),
+           balance = GoodsCredit_0 + paid_total_0 - owing_total_0,
+           balance = ifelse(ID %in% c(18, 214), 0, balance),
+           balance = round(balance, 2)) %>%
+    select(ID, Printed.Name, balance) %>% 
+    mutate(Name = Printed.Name) %>% 
     arrange(Name)
 }
 
-## When did people last use the coop?
+
+# Identifying active users ------------------------------------------------
 
 consumption_active_drink <- . %>%
   select(ID, Date) %>%
@@ -69,3 +71,18 @@ find_accounts_active <- function(.accounts, .active){
   semi_join(.accounts, .active) %>%
     arrange(Name)
 }
+
+
+# formatting Signup Sheet -------------------------------------------------
+
+format_accounts <- . %>%
+  mutate(balance_text = sprintf("%.2f", balance),
+         balance_text_format = ifelse(balance < 0,
+                                      paste0("\\textbf{", balance_text, "}"),
+                                      balance_text),
+         Name = ifelse(balance < 0,
+                       paste0("\\textbf{", Name, "}"),
+                       Name)) %>%
+  mutate(Coffee="", Milk="") %>%
+  select(Name, balance_text_format, Coffee, Milk, ID) %>%
+  set_names(c("Name","balance","\\textbf{Coffee}","\\textbf{Milk}","ID"))
