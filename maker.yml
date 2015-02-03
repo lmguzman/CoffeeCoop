@@ -4,6 +4,7 @@ packages:
   - dplyr
   - xtable
   - lubridate
+  - rmarkdown
   
 sources:
   - R/coffee_functions.R
@@ -11,10 +12,8 @@ sources:
 targets:
   all: 
     depends: 
-      - SignupSheet/accounts_active.csv
-      - SignupSheet/signuptable.tex
-#      - SignupSheet/Signup.pdf
-#      - PaymentSheet/payment.pdf
+      - SignupSheet/signuptable.pdf
+      - PaymentSheet/payment.pdf
 #      - ReportOnTheCoop/Report.pdf
 
   consumption:
@@ -70,3 +69,13 @@ targets:
     
   SignupSheet/signuptable.tex:
     command: print_signup_sheet(accounts_formatted, target_name)
+
+  PaymentSheet/payment.pdf:
+    depends: PaymentSheet/longtablepreamble.tex
+    command: render("PaymentSheet/payment.Rmd")
+    
+  SignupSheet/signuptable.pdf:
+    depends: SignupSheet/tabletemplate.tex
+    command: render("SignupSheet/signuptable.Rmd")
+
+
