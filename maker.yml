@@ -14,7 +14,7 @@ targets:
     depends: 
       - SignupSheet/signuptable.pdf
       - PaymentSheet/payment.pdf
-#      - ReportOnTheCoop/Report.pdf
+      - ReportOnTheCoop/Report.pdf
 
   consumption:
     command: read.csv(file="coffee_database/consumption.csv",stringsAsFactors=FALSE)
@@ -77,5 +77,10 @@ targets:
   SignupSheet/signuptable.pdf:
     depends: SignupSheet/tabletemplate.tex
     command: render("SignupSheet/signuptable.Rmd")
-
-
+    
+  ReportOnTheCoop/Report.pdf:
+    depends:
+      - coffee_database/info.csv
+      - coffee_database/consumption.csv
+      - SignupSheet/accounts_active.csv
+    command: render("ReportOnTheCoop/Report.Rmd")
