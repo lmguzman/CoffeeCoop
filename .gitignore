@@ -13,3 +13,6 @@ PaymentSheet/*.pdf
 ReportOnTheCoop/*.pdf
 
 .maker/
+
+SignupSheet/accounts_active.csv
+SignupSheet/signuptable.tex
