@@ -16,7 +16,7 @@ consumption <- read.csv("../coffee_database/consumption.csv", stringsAsFactors =
 accounts <- read.csv("../SignupSheet/accounts_active.csv", stringsAsFactors = FALSE)
 
 info$Date <- ymd(info$Date)
-consumption$data_date <- ymd(consumption$data_date)
+consumption$Date <- ymd(consumption$Date)
 ```
 
 # Report on the state of the Coffee Co-op
