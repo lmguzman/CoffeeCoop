@@ -1,14 +1,15 @@
 fix_date <- . %>% 
   mutate(Date=ymd(Date))
 
-check_info <- function(inf, consump) %>% 
-  extract2("Date") %>% 
-  max %>% 
-  difftime(max(consump$Date),units="days") %>% 
-  equals(0) %>% 
-  not %>% 
-  if(.) %>% 
-  stop(message("did you update info?"))
+check_info <- function(inf, consump){
+  inf %>% 
+    extract2("Date") %>% 
+    max %>% 
+    difftime(max(consump$Date),units="days") %>% 
+    equals(0) %>% 
+    not %>% 
+    if(.) stop(message("did you update info?"))
+}
 
 calc_money_owed <- function(consump, inf){
   consump %>%
@@ -46,9 +47,9 @@ do_accounts <- function(.money_owed, .money_paid, .people, .goods_bought){
 ## When did people last use the coop?
 
 consumption_active_drink <- . %>%
-  select(ID,Date) %>%
+  select(ID, Date) %>%
   group_by(ID) %>%
-  summarise(lastday=max(Date)) %>%
+  summarise(lastday = max(Date)) %>%
   filter(lastday>(now()-dweeks(8)))
 
 payments_active_money <- . %>%
@@ -58,3 +59,13 @@ payments_active_money <- . %>%
   summarise(lastday = max(Date)) %>%
   filter(lastday > (now() %>% subtract(dweeks(8))))
 
+whois_active <- function(.active_drink, .active_money){
+  rbind(.active_drink, .active_money) %>%
+    select(ID) %>%
+    unique
+}
+
+find_accounts_active <- function(.accounts, .active){
+  semi_join(.accounts, .active) %>%
+    arrange(Name)
+}
