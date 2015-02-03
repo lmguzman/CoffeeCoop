@@ -1,0 +1,72 @@
+## All R files that are used must be listed here:
+packages:
+  - magrittr
+  - dplyr
+  - xtable
+  - lubridate
+  
+sources:
+  - R/coffee_functions.R
+
+targets:
+  all: 
+    depends: 
+      - SignupSheet/accounts_active.csv
+      - SignupSheet/signuptable.tex
+#      - SignupSheet/Signup.pdf
+#      - PaymentSheet/payment.pdf
+#      - ReportOnTheCoop/Report.pdf
+
+  consumption:
+    command: read.csv(file="coffee_database/consumption.csv",stringsAsFactors=FALSE)
+    
+  payments:
+    command: read.csv(file="coffee_database/payments.csv",stringsAsFactors=FALSE)
+        
+  info:
+    command: read.csv(file="coffee_database/info.csv",stringsAsFactors=FALSE)
+    
+  people:
+    command: read.csv(file="coffee_database/people.csv",stringsAsFactors=FALSE)
+    
+  goods:
+    command: read.csv(file="coffee_database/goods.csv",stringsAsFactors=FALSE)
+    
+  consumption2:
+    command: fix_date(consumption)
+  
+  info2:
+    command: fix_date(info)
+    
+  money_owed:
+    command: calc_money_owed(consumption2, info2)
+    
+  money_paid:
+    command: calc_money_paid(payments)
+    
+  goods_bought:
+    command: calc_goods_bought(goods)
+    
+  accounts:
+    command: do_accounts(money_owed, money_paid, people, goods_bought)
+    
+  active_drink:
+    command: consumption_active_drink(consumption2)
+    
+  active_money:
+    command: payments_active_money(payments)
+    
+  active:
+    command: whois_active(active_drink, active_money)
+    
+  accounts_active:
+    command: find_accounts_active(accounts, active)
+    
+  SignupSheet/accounts_active.csv:
+    command: write.csv(accounts_active, target_name, row.names = FALSE)
+    
+  accounts_formatted:
+    command: format_accounts(accounts_active)
+    
+  SignupSheet/signuptable.tex:
+    command: print_signup_sheet(accounts_formatted, target_name)
