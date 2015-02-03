@@ -49,5 +49,12 @@ consumption_active_drink <- . %>%
   select(ID,Date) %>%
   group_by(ID) %>%
   summarise(lastday=max(Date)) %>%
-  filter(lastday>(now()-dweeks(8))
-  )
+  filter(lastday>(now()-dweeks(8)))
+
+payments_active_money <- . %>%
+  mutate(Date = ymd(data_date)) %>%
+  select(ID, Date, data_date) %>% #filter(is.na(Date))
+  group_by(ID) %>%
+  summarise(lastday = max(Date)) %>%
+  filter(lastday > (now() %>% subtract(dweeks(8))))
+
