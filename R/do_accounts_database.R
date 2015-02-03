@@ -8,15 +8,15 @@ library(magrittr)
 ## convert numbers to text for formatting later
 
 accounts_formatted <- accounts_active %>%
-  mutate(balance_text=sprintf("%.2f", balance),
-         balance_text_format=ifelse(balance<0,
-                                    paste0("\\textbf{",balance_text,"}"),
-                                    balance_text),
-         Name=ifelse(balance<0,
-                     paste0("\\textbf{",Name,"}"),
-                     Name)) %>%
+  mutate(balance_text = sprintf("%.2f", balance),
+         balance_text_format = ifelse(balance < 0,
+                                      paste0("\\textbf{", balance_text, "}"),
+                                      balance_text),
+         Name = ifelse(balance < 0,
+                       paste0("\\textbf{", Name, "}"),
+                       Name)) %>%
   cbind(data.frame(Coffee="",Milk="")) %>%
-  select(Name,balance_text_format,Coffee,Milk,ID) %>%
+  select(Name, balance_text_format, Coffee, Milk, ID) %>%
   set_names(c("Name","balance","\\textbf{Coffee}","\\textbf{Milk}","ID"))
 
 xtable(accounts_formatted,
