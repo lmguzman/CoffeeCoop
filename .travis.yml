@@ -17,5 +17,4 @@ before_install:
     - Rscript -e 'maker::install_maker(".")'
 
 install:
-    - Rscript -e 'options(repos="http://cran.rstudio.com"); maker::maker_install_packages()'
-    
+    - Rscript -e 'options(repos="http://cran.rstudio.com"); maker::install_missing_packages()'
