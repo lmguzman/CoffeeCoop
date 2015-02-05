@@ -75,8 +75,11 @@ targets:
     command: render("PaymentSheet/payment.Rmd")
     
   SignupSheet/signuptable.pdf:
-    depends: SignupSheet/tabletemplate.tex
+    depends: 
+      - SignupSheet/tabletemplate.tex
+      - SignupSheet/signuptable.tex
     command: render("SignupSheet/signuptable.Rmd")
+    quiet: true
     
   ReportOnTheCoop/Report.pdf:
     depends:
