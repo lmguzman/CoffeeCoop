@@ -18,3 +18,4 @@ before_install:
 
 install:
     - Rscript -e 'options(repos="http://cran.rstudio.com"); maker::maker_install_packages()'
+    
