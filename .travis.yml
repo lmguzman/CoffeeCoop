@@ -14,6 +14,7 @@ before_install:
     - chmod 755 ./travis-tool.sh
     - ./travis-tool.sh bootstrap
     - ./travis-tool.sh aptget_install texlive-xetex
+    - ./travis-tool.sh aptget_install latex-xcolor
     - ./travis-tool.sh install_github richfitz/remake
     - Rscript -e 'remake::install_remake(".")'
 
