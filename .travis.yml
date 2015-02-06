@@ -5,6 +5,7 @@ env:
     - CRAN: http://cran.rstudio.com
     - BOOTSTRAP_PANDOC: "1"
     - BOOTSTRAP_LATEX: "1"    
+    - BOOTSTRAP_XELATEX: "1"
 
 script:
     - ./maker
