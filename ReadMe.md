@@ -1,5 +1,7 @@
 # UBC Biodiversity Coffee Co-op
 
+[![Build Status](https://travis-ci.org/aammd/CoffeeCoop.png?branch=master)](https://travis-ci.org/aammd/CoffeeCoop)
+
 This repository contains all the data on coffee consumption for the UBC biodiversity building coffee co-op.  The co-op is currently managed by Andrew MacDonald.
 
 
