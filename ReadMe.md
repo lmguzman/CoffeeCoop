@@ -5,12 +5,12 @@ This repository contains all the data on coffee consumption for the UBC biodiver
 
 ### Compiling updated lists
 
-This project uses [maker](https://github.com/richfitz/maker), an R-ish version of Make created by @richfitz. 
+This project uses [remake](https://github.com/richfitz/remake), an R-ish version of Make created by @richfitz. 
 
-In order to recreate the summary information about our Coffee co-op, you must have `maker` installed. Then, simply run
+In order to recreate the summary information about our Coffee co-op, you must have `remake` installed. Then, simply run
 
 ```r
-make()
+remake::make()
 ```
 
 
