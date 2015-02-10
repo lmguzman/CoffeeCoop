@@ -5,6 +5,7 @@ packages:
   - xtable
   - lubridate
   - rmarkdown
+  - ggplot2
   
 sources:
   - R/coffee_functions.R
