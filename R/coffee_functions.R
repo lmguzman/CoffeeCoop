@@ -1,3 +1,5 @@
+library(magrittr)
+
 fix_date <- . %>% 
   mutate(Date=ymd(Date))
 
