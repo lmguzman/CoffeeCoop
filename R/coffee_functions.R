@@ -90,6 +90,7 @@ format_accounts <- . %>%
   set_names(c("Name","balance","\\textbf{Coffee}","\\textbf{Milk}","ID"))
 
 print_signup_sheet <- function(.accounts_formatted, output){
+  sink()
   sink(output)
   xtable(.accounts_formatted,
          align = c("|","l","|","p{5cm}","|","r","|","p{9cm}","|","p{6cm}","|","l","|")
