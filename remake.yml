@@ -69,7 +69,7 @@ targets:
     command: format_accounts(accounts_active)
     
   SignupSheet/signuptable.tex:
-    command: print_signup_sheet(accounts_formatted, target_name)
+    command: print_signup_sheet(accounts_formatted, I("SignupSheet/signuptable.tex"))
 
   PaymentSheet/payment.pdf:
     depends: PaymentSheet/longtablepreamble.tex
