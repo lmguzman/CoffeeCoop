@@ -12,25 +12,29 @@
 ## all payments - consumption*cost_when_consumed + all goods - any cash payments to this person.
 
 
-## not run
+## first use remake to read in all the latest data
 
-if(FALSE){
+library(remake)
+library(dplyr)
+
+dump_environment()
+
 # check somebody's payment history ------------------------------------------------------
 
 people %>%
   left_join(payments) %>%
-  filter(grepl("O'",Printed.Name))
+  filter(grepl("Rich",Printed.Name))
 
 
 # check consumption history -----------------------------------------------
 
 people %>%
   left_join(consumption) %>%
-  filter(grepl("O'",Printed.Name))
+  filter(grepl("Rich",Printed.Name))
 
 # check somebody's balance ------------------------------------------------
 
-filter(accounts,grepl("Burk",Name))
+filter(accounts,grepl("Rich",Name))
 
 
 # cumulative donation -----------------------------------------------------
@@ -39,4 +43,3 @@ consumption %>%
   left_join(info) %>%
   filter(CostBlack==0.35) %>%
   summarize(donation=sum(Coffee)*0.1)
-}
