@@ -147,3 +147,9 @@ data_date,ID,Item,Qty,Cost,purchase_date
 2015-Aug-17,283,milk,2,10.58,2015-Jul-27
 2015-Aug-17,119,milk,2,9.18,2015-Aug-03
 2015-Aug-17,119,milk,2,10.58,2015-Aug-10
+2015-Oct-05,108,milk,2,9.20,2015-Aug-17
+2015-Oct-05,119,milk,1,5.29,2015-Aug-24
+2015-Oct-05,219,milk,1,5.30,2015-Aug-31
+2015-Oct-05,283,milk,2,10.58,2015-Sept-21
+2015-Oct-05,311,milk,2,8.35,2015-Sept-28
+2015-Oct-05,172,sugar,2,6,2015-Oct-01

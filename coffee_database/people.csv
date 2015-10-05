@@ -36,7 +36,7 @@ ID,Printed.Name,Email,Start,Gone,Gone.Date
 37,"Birgit Schwarz",NA,NA,FALSE,NA
 38,"Brianna Wright",NA,NA,FALSE,NA
 39,"Bridget Conneely",conneely@zoology.ubc.ca,NA,TRUE,2012/04/13
-40,"Brook Moyers",brook.moyers@gmail.com,NA,FALSE,NA
+40,"Brook Moyers",brook.moyers@gmail.com,NA,TRUE,NA
 41,"Cait Nelson",NA,NA,FALSE,NA
 42,"Camille Cacnio",NA,NA,TRUE,2010/09/27
 43,"Carling Gerlinsky",NA,NA,FALSE,NA
@@ -45,7 +45,7 @@ ID,Printed.Name,Email,Start,Gone,Gone.Date
 46,"Catherine Hoffman",NA,2012/10/05,FALSE,NA
 47,"Charles Hefer",charles.hefer@gmail.com,NA,FALSE,NA
 48,"Charlotte Whitney",NA,NA,FALSE,NA
-49,"Chris Grassa",c.j.grassa@gmail.com,NA,FALSE,NA
+49,"Chris Grassa",c.j.grassa@gmail.com,NA,TRUE,NA
 50,"Chris Harley",NA,NA,FALSE,NA
 51,"Chris Sears",NA,NA,FALSE,NA
 52,"Christine Grossen",NA,2013/02/08,FALSE,NA
@@ -133,7 +133,7 @@ ID,Printed.Name,Email,Start,Gone,Gone.Date
 134,"Keith Adams",NA,2012/11/28,FALSE,NA
 135,"Kevin Wakeman",NA,NA,FALSE,NA
 136,"Kieran Samuk",samuk@zoology.ubc.ca,NA,FALSE,NA
-137,"Kira Delmore",kdelmore@zoology.ubc.ca,NA,FALSE,NA
+137,"Kira Delmore",kdelmore@zoology.ubc.ca,NA,TRUE,NA
 138,"Kristin Nurkowski",NA,2012/10/05,FALSE,NA
 257,"Kurt Trzcinski",NA,2013-Jun-26,FALSE,NA
 139,"Kyle Crowther",NA,2012/11/28,FALSE,NA
@@ -240,7 +240,7 @@ ID,Printed.Name,Email,Start,Gone,Gone.Date
 240,"Thor Veen",NA,NA,FALSE,NA
 241,"Thuy Nguyen",NA,NA,FALSE,NA
 242,"Travis Ingram",ingram@zoology.ubc.ca,NA,TRUE,2011/09/22
-243,"Vinicius Farjalla",vinicius.farjalla@gmail.com,NA,FALSE,2011/02/23
+243,"Vinicius Farjalla",vinicius.farjalla@gmail.com,NA,TRUE,2011/02/23
 244,"Virginia Noble",NA,NA,FALSE,NA
 245,"Wes Wenhardt",wenhardt@ubc.ca,NA,TRUE,2011/07/15
 246,"William Mountbatten",NA,2012/09/19,FALSE,NA
@@ -318,8 +318,17 @@ ID,Printed.Name,Email,Start,Gone,Gone.Date
 331,"Yichun Qin",NA,2015-Apr-24,FALSE,NA
 332,"Sean Kou",NA,2015-Apr-24,FALSE,NA
 333,"Rafael Lima",NA,2015-Aug-17,FALSE,NA
-334,"Nicole Knight",NA,2015-Aug-17,FALSE,NA
+334,"Nicole Knight",NA,2015-Aug-17,TRUE,NA
 335,"Joe Bahlman",NA,2015-Aug-17,FALSE,NA
 336,"Tessa Lawson",NA,2015-Aug-17,FALSE,NA
 337,"Ada Sin",NA,2015-Aug-17,FALSE,NA
 338,"Matt Pennell",NA,2015-Aug-17,FALSE,NA
+339,"Mariana Pascual", NA,2015-Oct-05,FALSE,NA
+340,"Linn\'ea",NA,2015-Oct-05,FALSE,NA
+341,"Gil",NA,2015-Oct-05,FALSE,NA
+342,"Ketty Zhang",NA,2015-Oct-05,FALSE,NA
+343,"Sam Straus",NA,2015-Oct-05,FALSE,NA
+344,"Natt Quek",NA,2015-Oct-05,FALSE,NA
+345,"Hamid Sati",NA,2015-Oct-05,FALSE,NA
+346,"Annila Noreen",NA,2015-Oct-05,FALSE,NA
+347,"Ilan Rubin",,NA,2015-Oct-05,FALSE,NA
