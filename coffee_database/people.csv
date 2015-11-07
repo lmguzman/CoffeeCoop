@@ -23,7 +23,7 @@ ID,Printed.Name,Email,Start,Gone,Gone.Date
 24,"Anna Van Tol",NA,NA,TRUE,2012/06/12
 25,"Anne Bjorkman",NA,2012/04/13,FALSE,NA
 26,"Anne Dalziel",dalziel@zoology.ubc.ca,NA,TRUE,NA
-27,Annika,NA,2012/11/28,FALSE,NA
+27,Annika,NA,2012/11/28,TRUE,NA
 28,"Armando Geraldes",geraldes@interchange.ubc.ca,NA,FALSE,NA
 29,"Arne Mooers",NA,NA,TRUE,2012/06/12
 30,"Art Shostak",NA,NA,TRUE,2011/06/14
@@ -126,7 +126,7 @@ ID,Printed.Name,Email,Start,Gone,Gone.Date
 127,"Kat Anderson",NA,NA,FALSE,NA
 128,"Kate Ostevik",kate.ostevik@gmail.com,NA,FALSE,NA
 129,"Katherine Ransom",admissions@beatymuseum.ubc.ca,NA,FALSE,NA
-130,"Kathryn Turner",kathryn.g.turner@gmail.com,NA,FALSE,NA
+130,"Kathryn Turner",kathryn.g.turner@gmail.com,NA,TRUE,NA
 131,"Katie Lotterhos",NA,2012/04/13,FALSE,NA
 132,"Katrina Dlugosch",katrina.dlugosch@gmail.com,NA,TRUE,2011/04/28
 133,"Kay Hodgins",hodgins@zoology.ubc.ca,NA,FALSE,NA
@@ -332,3 +332,6 @@ ID,Printed.Name,Email,Start,Gone,Gone.Date
 345,"Hamid Sati",NA,2015-Oct-05,FALSE,NA
 346,"Annila Noreen",NA,2015-Oct-05,FALSE,NA
 347,"Ilan Rubin",NA,2015-Oct-05,FALSE,NA
+348,"Olga Helmy",NA,2015-Nov-06,FALSE,NA 
+349,"Rachel Bay",NA,2015-Nov-06,FALSE,NA 
+350,"Rachel Wilson",NA,2015-Nov-06,FALSE,NA
