@@ -1,5 +1,11 @@
 library(magrittr)
 
+add_donation <- function(consump, donation){
+  donation %>%
+    mutate(Coffee = 2*Coffee, Milk = 2*Milk) %>%
+    bind_rows(consump)
+}
+
 fix_date <- . %>% 
   mutate(Date=ymd(Date))
 
@@ -47,6 +53,13 @@ do_accounts <- function(.money_owed, .money_paid, .people, .goods_bought){
     arrange(Name)
 }
 
+calculate_donations <- function(donation, inf){
+  donation %>%
+    left_join(inf) %>%
+    mutate(collected=CostBlack * Coffee + Milk * CostMilk) %>%
+    group_by(Date) %>%
+    summarise(collected_total = sum(collected, na.rm=TRUE))
+}
 
 # Identifying active users ------------------------------------------------
 

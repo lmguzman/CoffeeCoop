@@ -1,0 +1,29 @@
+---
+title: "Donations of the Coffee Co-op"
+author: "Melissa Guzman"
+date: "February 17, 2016"
+output: pdf_document
+---
+
+
+```{r echo=FALSE,message=FALSE}
+library(knitr)
+library(ggplot2)
+library(lubridate)
+opts_chunk$set(message=FALSE,warning=FALSE,echo=FALSE,dev="pdf")
+
+```
+
+# Report on the state of the Coffee Co-op
+```{r}
+since_last <- difftime(info$Date[length(info$Date)],info$Date[length(info$Date)-1],units="days")
+marked_coffees <- sum(donations[which(donations$data_date==max(donations$Date)),"Coffee"])
+
+total_donations
+```
+
+It has been `r since_last[[1]]` days since our sheet was updated. In that time we drank **`r consumed_coffees` coffees**, of which **`r marked_coffees`** were marked down; making our honesty during this period **`r round(100*marked_coffees/consumed_coffees)`%**
+
+## The distribution of co-op balances:
+Among users currently present in the building, **`r round(sum(accounts$balance<0)/nrow(accounts)*100)`%** owe the co-op money, representing a total debt of **`r sum(accounts$balance[accounts$balance<0],na.rm=TRUE)`**.
+
