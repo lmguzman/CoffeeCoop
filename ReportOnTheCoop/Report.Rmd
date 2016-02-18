@@ -12,18 +12,20 @@ library(lubridate)
 opts_chunk$set(message=FALSE,warning=FALSE,echo=FALSE,dev="pdf")
 
 info <- read.csv("../coffee_database/info.csv", stringsAsFactors = FALSE)
-consumption <- add_donation(consumption, donations, 1)
+consumption <- read.csv("../coffee_database/consumption.csv", stringsAsFactors = FALSE)
+donations <- read.csv("../coffee_database/donations.csv", stringsAsFactors = FALSE)
+consumption2 <- add_donation(consumption, donations, 1)
 accounts <- read.csv("../SignupSheet/accounts_active.csv", stringsAsFactors = FALSE)
 
 info$Date <- ymd(info$Date)
-consumption$Date <- ymd(consumption$Date)
+consumption2$Date <- ymd(consumption2$Date)
 ```
 
 # Report on the state of the Coffee Co-op
 ```{r}
 since_last <- difftime(info$Date[length(info$Date)],info$Date[length(info$Date)-1],units="days")
 consumed_coffees <- info$Count[length(info$Count)]-info$Count[length(info$Count)-1]
-marked_coffees <- sum(consumption[which(consumption$data_date==max(info$Date)),"Coffee"])
+marked_coffees <- sum(consumption2[which(consumption2$data_date==max(info$Date)),"Coffee"])
 ```
 
 It has been `r since_last[[1]]` days since our sheet was updated. In that time we drank **`r consumed_coffees` coffees**, of which **`r marked_coffees`** were marked down; making our honesty during this period **`r round(100*marked_coffees/consumed_coffees)`%**

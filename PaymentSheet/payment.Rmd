@@ -1,6 +1,5 @@
 ---
 title: "UBC Coffee Co-op payment sheet"
-author: "Andrew MacDonald"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
   pdf_document:

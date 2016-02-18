@@ -93,6 +93,9 @@ targets:
       - SignupSheet/signuptable.tex
     command: render("SignupSheet/signuptable.Rmd")
     quiet: true
+  
+  DonationsReport/Donations_report.pdf:
+    command: render("DonationsReport/Donations_report.Rmd")
     
   ReportOnTheCoop/Report.pdf:
     depends:
@@ -101,5 +104,4 @@ targets:
       - SignupSheet/accounts_active.csv
     command: render("ReportOnTheCoop/Report.Rmd")
   
-  DonationsReport/Donations_report.pdf:
-    command: render("DonationsReport/Donations_report.Rmd")
+  
