@@ -39,7 +39,7 @@ targets:
     command: read.csv(file="coffee_database/extra_donations.csv",stringsAsFactors=FALSE)
     
   consumption2:
-    command: add_donation(consumption, donations)
+    command: add_donation(consumption, donations, 2)
   
   consumption3:
     command: fix_date(consumption2)
@@ -48,7 +48,7 @@ targets:
     command: fix_date(info)
     
   money_owed:
-    command: calc_money_owed(consumption3, info2)
+    command: calc_money_owed(consumption3, info2, extra_donations)
     
   money_paid:
     command: calc_money_paid(payments)

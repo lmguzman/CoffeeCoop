@@ -12,7 +12,7 @@ library(lubridate)
 opts_chunk$set(message=FALSE,warning=FALSE,echo=FALSE,dev="pdf")
 
 info <- read.csv("../coffee_database/info.csv", stringsAsFactors = FALSE)
-consumption <- read.csv("../coffee_database/consumption.csv", stringsAsFactors = FALSE)
+consumption <- add_donation(consumption, donations, 1)
 accounts <- read.csv("../SignupSheet/accounts_active.csv", stringsAsFactors = FALSE)
 
 info$Date <- ymd(info$Date)

@@ -1,8 +1,8 @@
 library(magrittr)
 
-add_donation <- function(consump, donation){
+add_donation <- function(consump, donation, multi){
   donation %>%
-    mutate(Coffee = 2*Coffee, Milk = 2*Milk) %>%
+    mutate(Coffee = multi*Coffee, Milk = multi*Milk) %>%
     bind_rows(consump)
 }
 
@@ -19,12 +19,14 @@ check_info <- function(inf, consump){
     if(.) stop(message("did you update info?"))
 }
 
-calc_money_owed <- function(consump, inf){
+calc_money_owed <- function(consump, inf, extra){
   consump %>%
     left_join(inf) %>%
     mutate(owing=CostBlack * Coffee + Milk * CostMilk) %>%
     group_by(ID) %>% 
-    summarise(owing_total = sum(owing, na.rm=TRUE))
+    summarise(owing_total = sum(owing, na.rm=TRUE)) %>%
+    left_join(extra) %>%
+    mutate(owing = owing + payment)  
 }
 
 calc_money_paid <- . %>%
