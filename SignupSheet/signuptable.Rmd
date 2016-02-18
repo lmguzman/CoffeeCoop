@@ -6,7 +6,7 @@ output:
     template: tabletemplate.tex
 ---
 
-#Coffee Co-op signup sheet for `r format(Sys.time(), '%d %B %Y')`
+#Coffee Co-op signup sheet for  `r format(Sys.time(), '%d %B %Y')`
 
 Please bring your money to Melissa in room 207. Mark your coffee and milk separately.  Mark each **shot of espresso**, not each beverage.  Enjoy!
 

@@ -72,9 +72,6 @@ targets:
   accounts_active:
     command: find_accounts_active(accounts, active)
     
-  total_donations:
-    command: calculate_donations(donations, info2)
-    
   SignupSheet/accounts_active.csv:
     command: write.csv(accounts_active, target_name, row.names = FALSE)
     

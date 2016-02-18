@@ -61,7 +61,7 @@ calculate_donations <- function(donation, inf){
     left_join(inf) %>%
     mutate(collected=CostBlack * Coffee + Milk * CostMilk) %>%
     group_by(Date) %>%
-    summarise(collected_total = sum(collected, na.rm=TRUE))
+    summarise(collected_total = sum(collected, na.rm=TRUE), coffees_drank = sum(Coffee))
 }
 
 # Identifying active users ------------------------------------------------

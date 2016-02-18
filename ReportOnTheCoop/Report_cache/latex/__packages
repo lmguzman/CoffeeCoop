@@ -1,0 +1,9 @@
+base
+magrittr
+dplyr
+xtable
+lubridate
+rmarkdown
+ggplot2
+knitr
+tidyr
