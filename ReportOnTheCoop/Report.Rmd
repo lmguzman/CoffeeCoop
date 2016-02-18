@@ -38,7 +38,7 @@ Among users currently present in the building, **`r round(sum(accounts$balance<0
 
 **Please come and pay Melissa (207).  Let's try to improve these numbers!**
 
-## Milk consumption
+## Balance 
 
 
 ```{r fig.cap="The distribution of balances"}
