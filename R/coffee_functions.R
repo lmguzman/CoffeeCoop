@@ -26,7 +26,7 @@ calc_money_owed <- function(consump, inf, extra){
     group_by(ID) %>% 
     summarise(owing_total = sum(owing, na.rm=TRUE)) %>%
     left_join(extra) %>%
-    mutate(owing = owing + payment)  
+    mutate(final_owing = owing + payment)  
 }
 
 calc_money_paid <- . %>%
@@ -46,7 +46,7 @@ do_accounts <- function(.money_owed, .money_paid, .people, .goods_bought){
     mutate(paid_total_0 = ifelse(is.na(paid_total), 0, paid_total)) %>%
     left_join(.goods_bought) %>% 
     mutate(GoodsCredit_0 = ifelse(is.na(GoodsCredit), 0, GoodsCredit),
-           owing_total_0 = ifelse(is.na(owing_total), 0, owing_total),
+           owing_total_0 = ifelse(is.na(final_owing), 0, final_owing),
            balance = GoodsCredit_0 + paid_total_0 - owing_total_0,
            balance = ifelse(ID %in% c(18, 214,297), 0, balance),
            balance = round(balance, 2)) %>%
