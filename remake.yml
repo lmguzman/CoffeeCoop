@@ -102,4 +102,4 @@ targets:
     command: render("ReportOnTheCoop/Report.Rmd")
   
   DonationsReport/Donations_report.pdf:
-    command: render("Donations_report.Rmd")
+    command: render("DonationsReport/Donations_report.Rmd")
