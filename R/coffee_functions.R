@@ -26,7 +26,7 @@ calc_money_owed <- function(consump, inf, extra){
     group_by(ID) %>% 
     summarise(owing_total = sum(owing, na.rm=TRUE)) %>%
     left_join(extra) %>%
-    mutate(final_owing = owing + payment)  
+    mutate(final_owing = owing_total + payment)  
 }
 
 calc_money_paid <- . %>%
