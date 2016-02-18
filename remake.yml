@@ -16,6 +16,7 @@ targets:
       - SignupSheet/signuptable.pdf
       - PaymentSheet/payment.pdf
       - ReportOnTheCoop/Report.pdf
+      - DonationsReport/Donations_report.pdf
 
   consumption:
     command: read.csv(file="coffee_database/consumption.csv",stringsAsFactors=FALSE)
@@ -103,5 +104,3 @@ targets:
       - coffee_database/consumption.csv
       - SignupSheet/accounts_active.csv
     command: render("ReportOnTheCoop/Report.Rmd")
-  
-  
