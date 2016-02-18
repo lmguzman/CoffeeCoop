@@ -1,6 +1,5 @@
 ---
 title: "UBC Coffee Co-op payment sheet"
-author: "Andrew MacDonald"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
   pdf_document:
@@ -12,13 +11,14 @@ output:
 ```{r message=FALSE,echo=FALSE,results='asis'}
 library(dplyr)
 library(xtable)
-people <- read.csv(file="../coffee_database/people.csv",
+people <- read.csv(file="../SignupSheet/accounts_active.csv",
                    stringsAsFactors=FALSE)
 
 people %>%
   select(Printed.Name,ID) %>%
   mutate(Amount="") %>%
   arrange(Printed.Name) %>%
+  
   as.data.frame %>%
   xtable %>%
   print(type='latex',

@@ -16,6 +16,7 @@ targets:
       - SignupSheet/signuptable.pdf
       - PaymentSheet/payment.pdf
       - ReportOnTheCoop/Report.pdf
+      - DonationsReport/Donations_report.pdf
 
   consumption:
     command: read.csv(file="coffee_database/consumption.csv",stringsAsFactors=FALSE)
@@ -32,14 +33,23 @@ targets:
   goods:
     command: read.csv(file="coffee_database/goods.csv",stringsAsFactors=FALSE)
     
+  donations:
+    command: read.csv(file="coffee_database/donations.csv",stringsAsFactors=FALSE)
+  
+  extra_donations:
+    command: read.csv(file="coffee_database/extra_donations.csv",stringsAsFactors=FALSE)
+    
   consumption2:
-    command: fix_date(consumption)
+    command: add_donation(consumption, donations, 2)
+  
+  consumption3:
+    command: fix_date(consumption2)
   
   info2:
     command: fix_date(info)
     
   money_owed:
-    command: calc_money_owed(consumption2, info2)
+    command: calc_money_owed(consumption3, info2, extra_donations)
     
   money_paid:
     command: calc_money_paid(payments)
@@ -51,7 +61,7 @@ targets:
     command: do_accounts(money_owed, money_paid, people, goods_bought)
     
   active_drink:
-    command: consumption_active_drink(consumption2)
+    command: consumption_active_drink(consumption3)
     
   active_money:
     command: payments_active_money(payments)
@@ -61,6 +71,9 @@ targets:
     
   accounts_active:
     command: find_accounts_active(accounts, active)
+    
+  total_donations:
+    command: calculate_donations(donations, info2)
     
   SignupSheet/accounts_active.csv:
     command: write.csv(accounts_active, target_name, row.names = FALSE)
@@ -81,6 +94,9 @@ targets:
       - SignupSheet/signuptable.tex
     command: render("SignupSheet/signuptable.Rmd")
     quiet: true
+  
+  DonationsReport/Donations_report.pdf:
+    command: render("DonationsReport/Donations_report.Rmd")
     
   ReportOnTheCoop/Report.pdf:
     depends:

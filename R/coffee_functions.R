@@ -1,5 +1,11 @@
 library(magrittr)
 
+add_donation <- function(consump, donation, multi){
+  donation %>%
+    mutate(Coffee = multi*Coffee, Milk = multi*Milk) %>%
+    bind_rows(consump)
+}
+
 fix_date <- . %>% 
   mutate(Date=ymd(Date))
 
@@ -13,12 +19,15 @@ check_info <- function(inf, consump){
     if(.) stop(message("did you update info?"))
 }
 
-calc_money_owed <- function(consump, inf){
+calc_money_owed <- function(consump, inf, extra){
   consump %>%
     left_join(inf) %>%
     mutate(owing=CostBlack * Coffee + Milk * CostMilk) %>%
     group_by(ID) %>% 
-    summarise(owing_total = sum(owing, na.rm=TRUE))
+    summarise(owing_total = sum(owing, na.rm=TRUE)) %>%
+    left_join(extra) %>%
+    mutate(final_owing_0 = ifelse(is.na(extra_donated), 0, extra_donated)) %>%
+    mutate(final_owing = owing_total + final_owing_0)  
 }
 
 calc_money_paid <- . %>%
@@ -38,7 +47,7 @@ do_accounts <- function(.money_owed, .money_paid, .people, .goods_bought){
     mutate(paid_total_0 = ifelse(is.na(paid_total), 0, paid_total)) %>%
     left_join(.goods_bought) %>% 
     mutate(GoodsCredit_0 = ifelse(is.na(GoodsCredit), 0, GoodsCredit),
-           owing_total_0 = ifelse(is.na(owing_total), 0, owing_total),
+           owing_total_0 = ifelse(is.na(final_owing), 0, final_owing),
            balance = GoodsCredit_0 + paid_total_0 - owing_total_0,
            balance = ifelse(ID %in% c(18, 214,297), 0, balance),
            balance = round(balance, 2)) %>%
@@ -47,6 +56,13 @@ do_accounts <- function(.money_owed, .money_paid, .people, .goods_bought){
     arrange(Name)
 }
 
+calculate_donations <- function(donation, inf){
+  donation %>%
+    left_join(inf) %>%
+    mutate(collected=CostBlack * Coffee + Milk * CostMilk) %>%
+    group_by(Date) %>%
+    summarise(collected_total = sum(collected, na.rm=TRUE))
+}
 
 # Identifying active users ------------------------------------------------
 
