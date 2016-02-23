@@ -1,15 +1,15 @@
 ---
 title: "Report on the Coffee Co-op"
-author: "Andrew MacDonald"
-date: '2014-11-15'
+date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: pdf_document
 ---
 
 ```{r echo=FALSE,message=FALSE}
 library(knitr)
+library(knitr)
 library(ggplot2)
 library(lubridate)
-opts_chunk$set(message=FALSE,warning=FALSE,echo=FALSE,dev="pdf")
+opts_chunk$set(message=FALSE,warning=FALSE,echo=FALSE,dev="pdf",cache=TRUE)
 
 info <- read.csv("../coffee_database/info.csv", stringsAsFactors = FALSE)
 consumption <- read.csv("../coffee_database/consumption.csv", stringsAsFactors = FALSE)
@@ -25,17 +25,20 @@ consumption2$Date <- ymd(consumption2$Date)
 ```{r}
 since_last <- difftime(info$Date[length(info$Date)],info$Date[length(info$Date)-1],units="days")
 consumed_coffees <- info$Count[length(info$Count)]-info$Count[length(info$Count)-1]
-marked_coffees <- sum(consumption2[which(consumption2$data_date==max(info$Date)),"Coffee"])
+marked_coffees <- consumption2 %>%
+  group_by(Date) %>%
+  summarise(tot_coffee = sum(Coffee)) %>%
+  tail(1)
 ```
 
-It has been `r since_last[[1]]` days since our sheet was updated. In that time we drank **`r consumed_coffees` coffees**, of which **`r marked_coffees`** were marked down; making our honesty during this period **`r round(100*marked_coffees/consumed_coffees)`%**
+It has been `r since_last[[1]]` days since our sheet was updated. In that time we drank **`r consumed_coffees` coffees**, of which **`r marked_coffees$tot_coffee`** were marked down; making our honesty during this period **`r round(100*marked_coffees$tot_coffee/consumed_coffees)`%**
 
 ## The distribution of co-op balances:
 Among users currently present in the building, **`r round(sum(accounts$balance<0)/nrow(accounts)*100)`%** owe the co-op money, representing a total debt of **`r sum(accounts$balance[accounts$balance<0],na.rm=TRUE)`**.
 
-**Please come and pay Andrew MacDonald (203).  Let's try to improve these numbers!**
+**Please come and pay Melissa (207).  Let's try to improve these numbers!**
 
-## milk consumption
+## Balance 
 
 
 ```{r fig.cap="The distribution of balances"}

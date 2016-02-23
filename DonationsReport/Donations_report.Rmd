@@ -1,37 +1,64 @@
 ---
 title: "Donations of the Coffee Co-op"
-author: "Melissa Guzman"
-date: "February 17, 2016"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: pdf_document
 ---
 
 
 ```{r echo=FALSE,message=FALSE}
 library(knitr)
+library(knitr)
 library(ggplot2)
 library(lubridate)
-opts_chunk$set(message=FALSE,warning=FALSE,echo=FALSE,dev="pdf")
-
+opts_chunk$set(message=FALSE,warning=FALSE,echo=FALSE,dev="pdf",cache=TRUE)
 ```
 
-# Report on the state of the Coffee Co-op
+# Report on the donations from the Coffee Co-op
+```{r}
+extra_donations <- read.csv("../coffee_database/extra_donations.csv", stringsAsFactors = FALSE)
+donations <- read.csv("../coffee_database/donations.csv", stringsAsFactors = FALSE)
+info <- read.csv("../coffee_database/info.csv", stringsAsFactors = FALSE)
+```
+
 ```{r}
 
 info <- read.csv("../coffee_database/info.csv", stringsAsFactors = FALSE)
 consumption <- read.csv("../coffee_database/consumption.csv", stringsAsFactors = FALSE)
 donations <- read.csv("../coffee_database/donations.csv", stringsAsFactors = FALSE)
 
-since_last <- difftime(info$Date[length(info$Date)],info$Date[length(info$Date)-1],units="days")
-total_conmp <- consumption <- add_donation(consumption, donations, 1)
-marked_coffees <- sum(total_conmp[which(total_conmp$data_date==max(total_conmp$Date)),"Coffee"])
-
-print(sum(extra_donations$payment))
-
-total_donations
+extra_donations_total <- extra_donations %>%
+  group_by(Date) %>%
+  summarise(donated = sum(extra_donated))
 ```
 
-It has been `r since_last[[1]]` days since our sheet was updated. In that time we drank **`r consumed_coffees` coffees**, of which **`r marked_coffees`** were marked down; making our honesty during this period **`r round(100*marked_coffees/consumed_coffees)`%**
 
-extra_donations 
+```{r}
+total_donations <- calculate_donations(donations, info) %>% 
+  select(collected_total) %>% 
+  tail(1)
+Coffees <- calculate_donations(donations, info) %>% 
+  select(coffees_drank) %>% 
+  tail(1)
+```
 
-calculate_donations
+```{r}
+final_donations <- extra_donations_total$donated + total_donations$collected_total
+```
+
+```{r}
+date <- info %>%
+  select(Date) %>%
+  slice((nrow(info)-1)) %>%
+  ymd() 
+month_don <- month(date, label = TRUE, abbr = FALSE)
+day_don <- day(date)
+```
+
+Congratulations everyone! Since `r day_don` `r month_don` we collected **$`r final_donations`** for the AMS food bank. We had **$`r extra_donations_total$donated`** directly donated and **$`r total_donations$collected_total`** in `r Coffees` coffees. 
+
+Please thank Matt Siegle for the intitiative!
+
+Keep up the drinking! 
+
+The coffee co-op is now set up to accept donations through direct donation or by marked coffees. If you are interested in setting up a donation event please contact Melissa in office 207. 
+
