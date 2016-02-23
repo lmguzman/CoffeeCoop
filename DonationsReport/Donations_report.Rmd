@@ -16,6 +16,11 @@ opts_chunk$set(message=FALSE,warning=FALSE,echo=FALSE,dev="pdf")
 
 # Report on the state of the Coffee Co-op
 ```{r}
+
+info <- read.csv("../coffee_database/info.csv", stringsAsFactors = FALSE)
+consumption <- read.csv("../coffee_database/consumption.csv", stringsAsFactors = FALSE)
+donations <- read.csv("../coffee_database/donations.csv", stringsAsFactors = FALSE)
+
 since_last <- difftime(info$Date[length(info$Date)],info$Date[length(info$Date)-1],units="days")
 total_conmp <- consumption <- add_donation(consumption, donations, 1)
 marked_coffees <- sum(total_conmp[which(total_conmp$data_date==max(total_conmp$Date)),"Coffee"])
