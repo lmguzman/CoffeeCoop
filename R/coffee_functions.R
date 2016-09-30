@@ -40,7 +40,7 @@ calc_goods_bought <- . %>%
 
 do_accounts <- function(.money_owed, .money_paid, .people, .goods_bought){
   left_join(.money_owed, .money_paid) %>%
-    rbind_list(anti_join(.money_paid, .money_owed)) %>%
+    bind_rows(anti_join(.money_paid, .money_owed)) %>%
     left_join(.people) %>% 
     filter(!Gone) %>%
     ## some of the remaining (not gone people) have not paid  

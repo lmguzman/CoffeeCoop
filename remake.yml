@@ -101,3 +101,4 @@ targets:
       - coffee_database/consumption.csv
       - SignupSheet/accounts_active.csv
     command: render("ReportOnTheCoop/Report.Rmd")
+    
