@@ -8,7 +8,7 @@ output:
 
 #Coffee Co-op signup sheet for  `r format(Sys.time(), '%d %B %Y')`
 
-Please bring your money to Melissa in room 207. Mark your coffee and milk separately.  Mark each **shot of espresso**, not each beverage.  Enjoy!
+Please bring your money to Melissa in room 207. Mark your coffee and milk separately.  Mark each **shot of espresso**, not each beverage.  Coffee cost: 35c, milk cost: 15c. Enjoy!
 
 ```{r results='asis', echo=FALSE}
 f <- readLines("../SignupSheet/signuptable.tex")
