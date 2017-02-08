@@ -49,7 +49,7 @@ do_accounts <- function(.money_owed, .money_paid, .people, .goods_bought){
     mutate(GoodsCredit_0 = ifelse(is.na(GoodsCredit), 0, GoodsCredit),
            owing_total_0 = ifelse(is.na(final_owing), 0, final_owing),
            balance = GoodsCredit_0 + paid_total_0 - owing_total_0,
-           balance = ifelse(ID %in% c(18, 214,297), 0, balance),
+           balance = ifelse(ID %in% c(18, 214,297,374), 0, balance),
            balance = round(balance, 2)) %>%
     select(ID, Printed.Name, balance) %>% 
     mutate(Name = Printed.Name) %>% 
