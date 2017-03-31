@@ -13,7 +13,7 @@
 
 
 ## first use remake to read in all the latest data
-
+#devtools::install_github("richfitz/remake")
 library(remake)
 library(dplyr)
 
@@ -43,3 +43,4 @@ consumption %>%
   left_join(info) %>%
   filter(CostBlack==0.35) %>%
   summarize(donation=sum(Coffee)*0.1)
+
