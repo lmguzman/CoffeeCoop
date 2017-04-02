@@ -1,2 +1,2 @@
 library(rmarkdown)
-render("payment.Rmd")
+render("PaymentSheet/payment.Rmd")

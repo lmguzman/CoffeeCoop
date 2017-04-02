@@ -36,7 +36,7 @@ It has been `r since_last[[1]]` days since our sheet was updated. In that time w
 ## The distribution of co-op balances:
 Among users currently present in the building, **`r round(sum(accounts$balance<0)/nrow(accounts)*100)`%** owe the co-op money, representing a total debt of **`r sum(accounts$balance[accounts$balance<0],na.rm=TRUE)`**.
 
-**Please come and pay Melissa (207).  Let's try to improve these numbers!**
+**Please come and pay Ken (236).  Let's try to improve these numbers!**
 
 ## Balance 
 
