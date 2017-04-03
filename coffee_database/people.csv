@@ -324,7 +324,7 @@ ID,Printed.Name,Email,Start,Gone,Gone.Date
 337,"Ada Sin",NA,2015-Aug-17,FALSE,NA
 338,"Matt Pennell",NA,2015-Aug-17,FALSE,NA
 339,"Mariana Pascual", NA,2015-Oct-05,FALSE,NA
-340,"Linn\'ea",NA,2015-Oct-05,FALSE,NA
+340,"Linn\'ea Sandell",NA,2015-Oct-05,FALSE,NA
 341,"Gil Henriques",NA,2015-Oct-05,FALSE,NA
 342,"Ketty Zhang",NA,2015-Oct-05,FALSE,NA
 343,"Sam Straus",NA,2015-Oct-05,FALSE,NA
@@ -359,7 +359,7 @@ ID,Printed.Name,Email,Start,Gone,Gone.Date
 371,"Alyssa Gehman",NA,2016-Aug-30,FALSE,NA
 372,"Jeff Strohn",NA,2016-Aug-30,FALSE,NA
 373,"Rachel Germain",NA,2016-Sep-30,FALSE,NA
-374,"Ken Thompson",NA,2016-Sep-30,FALSE,NA
+374,"!Ken Thompson",NA,2016-Sep-30,FALSE,NA
 375,"Laura Parfrey",NA,2016-Sep-30,FALSE,NA
 376,"Mauro Sugowara",NA,2016-Sep-30,FALSE,NA
 377,"Giulio Dalla Riva",NA,2016-Sep-30,FALSE,NA
@@ -370,3 +370,7 @@ ID,Printed.Name,Email,Start,Gone,Gone.Date
 382,"Uriel Cruz",NA,2016-Dec-07,FALSE,NA
 383,"Sam James",NA,2016-Dec-07,FALSE,NA
 384,"Shahab Zareyan",NA,2017-Feb-08,FALSE,NA
+385,"Sylvia Heredia",NA,2017-Apr-03,FALSE,NA
+386,"Mack Bartlett",NA,2017-Apr-03,FALSE,NA
+387,"John Cristiani",NA,2017-Apr-03,FALSE,NA
+388,"Pirmin Nietlisbch",NA,2017-Apr-03,FALSE,NA
