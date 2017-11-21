@@ -35,7 +35,7 @@ people %>%
 # check somebody's balance ------------------------------------------------
 
 filter(accounts,grepl("Rich",Name))
-
+# balance <- filter(accounts,grepl("", Name)) #everybody
 
 # cumulative donation -----------------------------------------------------
 
